@@ -16,7 +16,6 @@ services:
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=12341234
-      - MYSQL_PASSWORD=12341234
       - MYSQL_DATABASE=development
     volumes:
       - db:/var/lib/mysql
@@ -32,7 +31,6 @@ services:
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=12341234
-      - MYSQL_PASSWORD=12341234
       - MYSQL_DATABASE=test
     volumes:
       - ./config/mysql/mysqld.cnf:/etc/mysql/conf.d/custom.cnf
