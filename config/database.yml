@@ -1,12 +1,6 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#
 default: &default
   adapter: sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
   timeout: 5000
 
 development:
@@ -20,6 +14,18 @@ test:
   <<: *default
   database: db/test.sqlite3
 
-production:
-  <<: *default
-  database: db/production.sqlite3
+production: &production
+  adapter: <%= ENV['API_ADAPTER'] || "sqlite3" %>
+  database: <%= ENV['API_DB'] || 'db/production.sqlite3' %>
+  encoding: utf8
+  reconnect: true
+  username: <%= ENV['API_DB_USERNAME'] %>
+  password: <%= ENV['API_DB_PASSWORD'] %>
+  host: <%= ENV['API_DB_HOST'] %>
+  port: <%= ENV['API_DB_PORT'] || 3306 %>
+  pool: 5
+  timeout: 5000
+
+staging:
+  <<: *production
+
