@@ -4,7 +4,7 @@ config = YAML.load_file('config/config.yml')["deployment"] || {}
 # config valid only for current version of Capistrano
 lock '3.8.2'
 
-set :application, 'ScholarsArchive'
+set :application, 'API'
 set :repo_url, config['repository']
 
 # Default branch is :master
