@@ -3,11 +3,11 @@
 #Input: XML from alma for ONE day
 #output: JSON for ONE day with an open time, close time, and date
 module API
-  class HoursXmlToJsonParser
-    def self.call(hours_xml)
+	class HoursXmlToJsonParser
+		def self.call(hours_xml)
 			parse_xml(hours_xml)
 		end
-		
+
 		private
 
 		def self.parse_xml(hours_xml)
@@ -24,11 +24,11 @@ module API
 		def self.build_json_from_data(data)
 			{ open: data[:open_time],
 				close: data[:close_time],
-				string_date: DateTime.parse(data[:parsed_time].to_s).strftime("%a, %b %e, %Y"),
-				sortable_date: data[:parsed_time].to_s,
-				formatted_hours: formatted_hours(data[:open_time], data[:close_time]),
-				open_all_day: open_all_day?(data[:open_time], data[:close_time]),
-				closes_at_night: closes_at_night?(data[:close_time])
+	      string_date: DateTime.parse(data[:parsed_time].to_s).strftime("%a, %b %e, %Y"),
+        sortable_date: data[:parsed_time].to_s,
+        formatted_hours: formatted_hours(data[:open_time], data[:close_time]),
+        open_all_day: open_all_day?(data[:open_time], data[:close_time]),
+        closes_at_night: closes_at_night?(data[:close_time])
 			}
 		end
 
@@ -57,5 +57,5 @@ module API
 		def self.xml_parser
 			Nokogiri::XML	
 		end
-  end
+	end
 end
