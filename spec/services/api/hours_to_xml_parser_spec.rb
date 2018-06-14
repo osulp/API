@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-Rspec.describe API::HoursXmlToJsonParser do
+describe API::HoursXmlToJsonParser do
   let(:service) { described_class }
   let(:xml) {}
   let(:formatted_time) {  }
