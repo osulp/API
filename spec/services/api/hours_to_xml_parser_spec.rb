@@ -23,13 +23,13 @@ describe API::HoursXmlToJsonParser do
         </days>'
       }
       it "outputs JSON in a valid format" do
-        expect(service.call(xml)[formatted_time]["open"]).to eq "00:00"
-        expect(service.call(xml)[formatted_time]["close"]).to eq "02:59"
-        expect(service.call(xml)[formatted_time]["string_date"]).to eq "Fri, Jun  8, 2018"
-        expect(service.call(xml)[formatted_time]["sortable_date"]).to eq "2018-06-08"
-        expect(service.call(xml)[formatted_time]["formatted_hours"]).to eq "00:00 - 02:59"
-        expect(service.call(xml)[formatted_time]["open_all_day"]).to eq false
-        expect(service.call(xml)[formatted_time]["closes_at_night"]).to eq true
+        expect(service.call(xml)[formatted_time][:open]).to eq "00:00"
+        expect(service.call(xml)[formatted_time][:close]).to eq "02:59"
+        expect(service.call(xml)[formatted_time][:string_date]).to eq "Fri, Jun  8, 2018"
+        expect(service.call(xml)[formatted_time][:sortable_date]).to eq "2018-06-08"
+        expect(service.call(xml)[formatted_time][:formatted_hours]).to eq "00:00 - 02:59"
+        expect(service.call(xml)[formatted_time][:open_all_day]).to eq false
+        expect(service.call(xml)[formatted_time][:closes_at_night]).to eq true
       end
     end
     context "when multiple days are requested" do
@@ -59,13 +59,13 @@ describe API::HoursXmlToJsonParser do
         </days>'
       }
       it "outputs JSON in a valid format" do
-        expect(service.call(xml)[formatted_time]["open"]).to eq "00:00"
-        expect(service.call(xml)[formatted_time]["close"]).to eq "02:59"
-        expect(service.call(xml)[formatted_time]["string_date"]).to eq "Fri, Jun  8, 2018"
-        expect(service.call(xml)[formatted_time]["sortable_date"]).to eq "2018-06-08"
-        expect(service.call(xml)[formatted_time]["formatted_hours"]).to eq "00:00 - 02:59"
-        expect(service.call(xml)[formatted_time]["open_all_day"]).to eq false
-        expect(service.call(xml)[formatted_time]["closes_at_night"]).to eq true
+        expect(service.call(xml)[formatted_time][:open]).to eq "00:00"
+        expect(service.call(xml)[formatted_time][:close]).to eq "02:59"
+        expect(service.call(xml)[formatted_time][:string_date]).to eq "Fri, Jun  8, 2018"
+        expect(service.call(xml)[formatted_time][:sortable_date]).to eq "2018-06-08"
+        expect(service.call(xml)[formatted_time][:formatted_hours]).to eq "00:00 - 02:59"
+        expect(service.call(xml)[formatted_time][:open_all_day]).to eq false
+        expect(service.call(xml)[formatted_time][:closes_at_night]).to eq true
       end
     end
   end
