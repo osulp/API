@@ -27,13 +27,5 @@ RSpec.describe Alma do
   it 'has open_hours' do
     expect(alma.open_hours).to_not be_nil
     expect(alma.hash).to_not be_nil
-
-    # expect(calendar.detail[:events].length).to eq(1)
-    # event = calendar.detail[:events].first
-    # expect(event.title).to eq('Jaspersoft Training')
-    # expect(event.link).to eq('http://calendar.oregonstate.edu/event/122043/')
-    # expect(event.start_time).to eq('Wed, 04 Jan 2017 08:30:00 PST')
-    # expect(event.end_time).to eq('Wed, 04 Jan 2017 12:00:00 PST')
-    # expect(event.room).to eq('Barnard Classroom')
   end
 end
