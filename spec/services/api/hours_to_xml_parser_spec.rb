@@ -9,7 +9,7 @@ Rspec.describe API::HoursXmlToJsonParser do
     context "when only one day is requested" do
       let(:formatted_time) { DateTime.parse("2018-06-08").to_s }
       let(:xml) {
-        <days>
+        '<days>
           <day>
             <date>2018-06-08Z</date>
             <day_of_week desc="Friday">6</day_of_week>
@@ -20,7 +20,7 @@ Rspec.describe API::HoursXmlToJsonParser do
               </hour>
             </hours>
           </day>
-        </days>
+        </days>'
       }
       it "outputs JSON in a valid format" do
         expect(service.call(xml)[formatted_time]["open"]).to eq "00:00"
@@ -35,7 +35,7 @@ Rspec.describe API::HoursXmlToJsonParser do
     context "when multiple days are requested" do
       let(:formatted_time) { DateTime.parse("2018-06-08").to_s }
       let(:xml) {
-        <days>
+        '<days>
           <day>
             <date>2018-06-03Z</date>
             <day_of_week desc="Sunday">1</day_of_week>
@@ -56,7 +56,7 @@ Rspec.describe API::HoursXmlToJsonParser do
               </hour>
             </hours>
           </day>
-        </days>
+        </days>'
       }
       it "outputs JSON in a valid format" do
         expect(service.call(xml)[formatted_time]["open"]).to eq "00:00"
