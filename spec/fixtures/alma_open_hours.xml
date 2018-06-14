@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<days>
+  <day>
+    <date>2018-06-03Z</date>
+    <day_of_week desc="Sunday">1</day_of_week>
+    <hours>
+      <hour>
+        <from>13:00</from>
+        <to>23:59</to>
+      </hour>
+    </hours>
+  </day>
+  <day>
+    <date>2018-06-04Z</date>
+    <day_of_week desc="Monday">2</day_of_week>
+    <hours>
+      <hour>
+        <from>00:00</from>
+        <to>23:59</to>
+      </hour>
+    </hours>
+  </day>
+  <day>
+    <date>2018-06-05Z</date>
+    <day_of_week desc="Tuesday">3</day_of_week>
+    <hours>
+      <hour>
+        <from>00:00</from>
+        <to>23:59</to>
+      </hour>
+    </hours>
+  </day>
+  <day>
+    <date>2018-06-06Z</date>
+    <day_of_week desc="Wednesday">4</day_of_week>
+    <hours>
+      <hour>
+        <from>00:00</from>
+        <to>23:59</to>
+      </hour>
+    </hours>
+  </day>
+  <day>
+    <date>2018-06-07Z</date>
+    <day_of_week desc="Thursday">5</day_of_week>
+    <hours>
+      <hour>
+        <from>00:00</from>
+        <to>23:59</to>
+      </hour>
+    </hours>
+  </day>
+  <day>
+    <date>2018-06-08Z</date>
+    <day_of_week desc="Friday">6</day_of_week>
+    <hours>
+      <hour>
+        <from>00:00</from>
+        <to>02:59</to>
+      </hour>
+    </hours>
+  </day>
+  <day>
+    <date>2018-06-09Z</date>
+    <day_of_week desc="Saturday">7</day_of_week>
+    <hours>
+      <hour>
+        <from>10:00</from>
+        <to>23:59</to>
+      </hour>
+    </hours>
+  </day>
+</days>
