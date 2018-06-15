@@ -33,6 +33,7 @@ services:
     expose:
       - 3000
 
+
   ##
   # Load balancer, although not strictly necessary.. would allow the app to work with regular port 80
   lb:
