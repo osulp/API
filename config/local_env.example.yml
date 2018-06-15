@@ -12,7 +12,7 @@ API_SECRET_KEY_BASE: bobross1234bobross1234bobross1234bobross1234bobross1234
 # Capistrano deployment log path
 API_DEPLOYED_REVISION_LOG: /path/to/app/revisions.log
 
-
+# Alma
 ALMA_OPEN_HOURS_URL: 'https://url/to/alma/api'
 ALMA_API_KEY: 'almaapikey123'
 ALMA_CACHED_FOR: '720'
