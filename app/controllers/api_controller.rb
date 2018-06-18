@@ -1,20 +1,19 @@
 class ApiController < ApplicationController
+  before_action :set_params
+
   def hours
-    day = params[:day].nil? : Date.today : params[:day]
-    response_from_api = "" #Call API here to fetch hours with day
-    json = "" #HoursXmlToJsonParser.call(reponse_from_api)
-    respond_to do |format|
-      format.json { render json: json }
-    end
+    dates = @dates.blank? ? [Date.today, Date.today] : @dates.sort
+    alma = Alma.new(dates.first, dates.last)
+    hours = API::HoursXmlToJsonParser.call(alma.xml_document)
+
+    render json: hours
   end
 
-  def multi_day_hours
-    beginning_day = params[:beginning_day].nil? : Date.today : params[:beginning_day] 
-    ending_day = params[:ending_day].nil? : Date.today : params[:ending_day] 
-    response_from_api = "" #Call API here to fetch hours with beginning_day and ending_day
-    json = "" #HoursXmlToJsonParser.call(reponse_from_api)
-    respond_to do |format|
-      format.json { render json: json }
-    end
+  private
+
+  def set_params
+    # expecting a JSON array of dates, see following example:
+    # {"dates":["2016-01-01","2016-01-02","2016-01-03"]}
+    @dates = params[:dates]
   end
 end
