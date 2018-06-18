@@ -5,7 +5,7 @@ describe ApiController, type: :controller do
     let(:day) { }
     let(:api) { double("API") }
     let(:service) { double("API::HoursXmlToJsonParser") }
-    let(:valid_json) { JSON.parse({ valid_json_with_data: {data: "data"} }) }
+    let(:valid_json) { JSON.parse('{ "valid_json_with_data": {"data": "data"} }') }
     let(:valid_xml) { "<days><day><date>2018-06-03Z</date><from>00:00</from><to>23:59</to></day></days>" }
 
     context "When no day is provided" do
@@ -35,7 +35,7 @@ describe ApiController, type: :controller do
     let(:day) { }
     let(:api) { double("API") }
     let(:service) { double("API::HoursXmlToJsonParser") }
-    let(:valid_json) { JSON.parse({ valid_json_with_data: {data: "data"} }) }
+    let(:valid_json) { JSON.parse('{ "valid_json_with_data": {"data": "data"} }') }
     let(:valid_xml) { "<days><day><date>2018-06-03Z</date><from>00:00</from><to>23:59</to></day><day><date>2018-06-04Z</date><from>01:00</from><to>21:59</to></day></days>" }
 
     context "When a day is provided" do
