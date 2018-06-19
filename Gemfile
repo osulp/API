@@ -52,7 +52,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano3-puma'
-  gem "capistrano", require: false
+  gem "capistrano", '3.8.2', require: false
   gem "capistrano-rails", require: false
 end
 
