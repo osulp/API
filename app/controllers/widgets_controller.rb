@@ -2,7 +2,7 @@ class WidgetsController < ApplicationController
   include ActionController::MimeResponds
 
   def show
-    dates = [Date.today, Date.today + 6.days]
+    dates = [Date.today.strftime("%Y-%m-%d"), (Date.today+6.days).strftime("%Y-%m-%d")]
     alma = Alma.new(dates.first, dates.last)
     @hours = API::HoursXmlToJsonParser.call(alma.xml_document)
 
