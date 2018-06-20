@@ -2,7 +2,7 @@ class ApiController < ApplicationController
   before_action :set_params
 
   def hours
-    dates = @dates.blank? ? [Date.today, Date.today] : @dates.sort
+    dates = @dates.blank? ?  [Date.today.strftime("%Y-%m-%d"), Date.today.strftime("%Y-%m-%d")] : @dates.sort
     alma = Alma.new(dates.first, dates.last)
     @hours = API::HoursXmlToJsonParser.call(alma.xml_document)
 

@@ -8,8 +8,8 @@ describe ApiController, type: :controller do
     let(:alma) { Alma.new(date_from, date_to) }
     let(:url) { "#{ENV['ALMA_OPEN_HOURS_URL']}?apikey=#{ENV['ALMA_API_KEY']}&from=#{date_from}&to=#{date_to}" }
     let(:xml) { File.read("spec/fixtures/alma_open_hours.xml") }
-    let(:date_from) { "2018-06-18" }
-    let(:date_to) { "2018-06-18" }
+    let(:date_from) { Date.today.strftime("%Y-%m-%d") }
+    let(:date_to) { Date.today.strftime("%Y-%m-%d") }
     let(:cached_minutes) { "1" }
 
     before do
