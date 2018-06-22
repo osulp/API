@@ -1,12 +1,12 @@
 class WidgetsController < ApplicationController
   include ActionController::MimeResponds
+  before_action :set_params
 
-  def show
-    dates = [Date.today.strftime("%Y-%m-%d"), (Date.today+6.days).strftime("%Y-%m-%d")]
-    alma = Alma.new(dates.first, dates.last)
-    @hours = API::HoursXmlToJsonParser.call(alma.xml_document)
+  def hours
+    @hours = @template.include?('calendar') ? '{}' : alma_request
 
     respond_to do |format|
+      format.html { render html: html_content }
       format.js   { render js: js_constructor }
     end
   end
@@ -14,11 +14,25 @@ class WidgetsController < ApplicationController
   private
 
   def js_constructor
-    content = ActionController::Base.new.render_to_string("widgets/#{params[:template]}",
+    content = ActionController::Base.new.render_to_string("widgets/hours/#{params[:template]}",
                                                           layout: false,
                                                           :locals => {
                                                               :hours => JSON.parse(@hours)
                                                           })
     "document.write(#{content.to_json})"
+  end
+
+  def html_content
+    ActionController::Base.new.render_to_string("widgets/hours/#{params[:template]}", layout: 'calendar_widget')
+  end
+
+  def alma_request
+    dates = [Date.today.strftime("%Y-%m-%d"), (Date.today+6.days).strftime("%Y-%m-%d")]
+    alma = Alma.new(dates.first, dates.last)
+    API::HoursXmlToJsonParser.call(alma.xml_document)
+  end
+
+  def set_params
+    @template = params[:template]
   end
 end

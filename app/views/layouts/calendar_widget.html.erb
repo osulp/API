@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <style> body {font-family: 'Open sans',sans-serif;} </style>
+    <script>
+        $( function() {
+            function showHours(dateText) {
+                var ajaxUrl = '<%= Rails.application.config.action_mailer.default_url_options[:protocol] %>://<%= Rails.application.config.action_mailer.default_url_options[:host] %>/hours'
+                $.ajax({
+                    type: 'POST',
+                    url: ajaxUrl,
+                    data: {
+                        'dates': [dateText, dateText]
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data) {
+                            var items = [];
+                            $.each( data, function( key, val ) {
+                                items.push( "<b>" + val.string_date + "</b><br>" + val.formatted_hours );
+                            });
+
+                            $('.ajax_output').remove();
+                            $('#libHours').prepend('<div class=\"ajax_output\"><p>' + items.join("") +'</p></div>');
+
+                        }
+                    },
+                    error: function (xmlhttp) {
+                        alert('An error occured: ' + xmlhttp.status);
+                    }
+                });
+            }
+            $("#widget_datepicker").datepicker({
+                dateFormat: 'yy-mm-dd',
+                onSelect: function(dateText, inst){
+                    showHours(dateText);
+                },
+            });
+        } );
+    </script>
+  </head>
+
+  <body>
+    <%= yield %>
+    <div id="libHours">
+      <div class="ajax_output"></div>
+    </div>
+  </body>
+</html>
