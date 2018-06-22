@@ -15,9 +15,9 @@ module API
       parsed_xml = xml_parser.parse(hours_xml)
       day_list = parsed_xml.xpath("//day")
       hour_list = parsed_xml.xpath("//hour").map { |element| element.element_children.map(&:text) } 
-      day_list.each do |day, i|
+      day_list.each_with_index do |day, i|
         data = {open_time: hour_list[i].empty? ? '00:00' : hour_list[i].first.to_s, 
-                close_time: hour_list[i].empty? ? '00:00' : hour_list[i].second.text.to_s, 
+                close_time: hour_list[i].empty? ? '00:00' : hour_list[i].second.to_s, 
                 parsed_time: day.xpath("//date")[i].text.gsub("Z", "") }
         json_data[DateTime.parse(data[:parsed_time]).to_s] = build_json_from_data(data)
       end
