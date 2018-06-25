@@ -3,7 +3,13 @@ class WidgetsController < ApplicationController
   before_action :set_params
 
   def hours
-    @hours = @template.include?('calendar') ? '{}' : alma_request
+    if @template == 'calendar'
+      @hours = '{}'
+    elsif @template == 'special_hours'
+      @hours = alma_special_hours_request
+    else
+      @hours = alma_request
+    end
 
     respond_to do |format|
       format.html { render html: html_content }
@@ -30,6 +36,11 @@ class WidgetsController < ApplicationController
     dates = [Date.today.strftime("%Y-%m-%d"), (Date.today+6.days).strftime("%Y-%m-%d")]
     alma = Alma.new(dates.first, dates.last)
     API::HoursXmlToJsonParser.call(alma.xml_document)
+  end
+
+  def alma_special_hours_request
+    alma = AlmaSpecialHours.new
+    API::SpecialHoursXmlToJsonParser.call(alma.xml_document)
   end
 
   def set_params

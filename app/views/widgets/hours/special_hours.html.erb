@@ -1,0 +1,12 @@
+<h1>Special Dates</h1>
+
+<ul>
+  <% hours.each do |key, value| %>
+    <li>
+      <b><%= "#{value["from_date"]} - #{value["to_date"]}" %></b>
+      <ul>
+        <li><%= "#{value["desc"]}: #{value["status"]}" %></li>
+      </ul>
+    </li>
+  <% end %>
+</ul>
