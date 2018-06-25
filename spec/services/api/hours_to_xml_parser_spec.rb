@@ -23,11 +23,11 @@ describe API::HoursXmlToJsonParser do
         </days>'
       }
       it "outputs JSON in a valid format" do
-        expect(JSON.parse(service.call(xml))[formatted_time]["open"]).to eq "00:00"
-        expect(JSON.parse(service.call(xml))[formatted_time]["close"]).to eq "02:59"
+        expect(JSON.parse(service.call(xml))[formatted_time]["open"]).to eq "12:00am"
+        expect(JSON.parse(service.call(xml))[formatted_time]["close"]).to eq " 2:59am"
         expect(JSON.parse(service.call(xml))[formatted_time]["string_date"]).to eq "Fri, Jun  8, 2018"
         expect(JSON.parse(service.call(xml))[formatted_time]["sortable_date"]).to eq "2018-06-08"
-        expect(JSON.parse(service.call(xml))[formatted_time]["formatted_hours"]).to eq "00:00 - 02:59"
+        expect(JSON.parse(service.call(xml))[formatted_time]["formatted_hours"]).to eq "12:00am - 2:59am"
         expect(JSON.parse(service.call(xml))[formatted_time]["open_all_day"]).to eq false
         expect(JSON.parse(service.call(xml))[formatted_time]["closes_at_night"]).to eq true
       end
@@ -59,11 +59,11 @@ describe API::HoursXmlToJsonParser do
         </days>'
       }
       it "outputs JSON in a valid format" do
-        expect(JSON.parse(service.call(xml))[formatted_time]["open"]).to eq "00:00"
-        expect(JSON.parse(service.call(xml))[formatted_time]["close"]).to eq "02:59"
+        expect(JSON.parse(service.call(xml))[formatted_time]["open"]).to eq "12:00am"
+        expect(JSON.parse(service.call(xml))[formatted_time]["close"]).to eq " 2:59am"
         expect(JSON.parse(service.call(xml))[formatted_time]["string_date"]).to eq "Fri, Jun  8, 2018"
         expect(JSON.parse(service.call(xml))[formatted_time]["sortable_date"]).to eq "2018-06-08"
-        expect(JSON.parse(service.call(xml))[formatted_time]["formatted_hours"]).to eq "00:00 - 02:59"
+        expect(JSON.parse(service.call(xml))[formatted_time]["formatted_hours"]).to eq "12:00am - 2:59am"
         expect(JSON.parse(service.call(xml))[formatted_time]["open_all_day"]).to eq false
         expect(JSON.parse(service.call(xml))[formatted_time]["closes_at_night"]).to eq true
       end

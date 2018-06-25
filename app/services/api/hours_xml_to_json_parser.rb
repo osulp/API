@@ -22,8 +22,8 @@ module API
     end
 
     def self.build_json_from_data(data)
-      { open: data[:open_time],
-        close: data[:close_time],
+      { open: Time.parse(data[:open_time]).strftime("%l:%M%P"),
+        close: Time.parse(data[:close_time]).strftime("%l:%M%P"),
         string_date: DateTime.parse(data[:parsed_time].to_s).strftime("%a, %b %e, %Y"),
         sortable_date: data[:parsed_time].to_s,
         formatted_hours: formatted_hours(data[:open_time], data[:close_time]),
@@ -42,7 +42,7 @@ module API
 
     def self.formatted_hours(open_time, close_time)
       if (close_time == "00:14")
-        "#{open_time} - No Closing"
+        "#{Time.parse(open_time).strftime("%l:%M%P")} - No Closing"
       elsif (open_time == "00:14")
         "Closes at #{close_time}"
       elsif (open_time == "00:00" && close_time == "23:59")
@@ -50,7 +50,7 @@ module API
       elsif (open_time == "01:00" && close_time == "01:00")
         "Closed"
       else
-        "#{open_time} - #{close_time}"
+        "#{Time.parse(open_time).strftime("%l:%M%P")} -#{Time.parse(close_time).strftime("%l:%M%P")}"
       end
     end
 
