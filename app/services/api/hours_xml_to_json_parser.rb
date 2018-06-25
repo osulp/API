@@ -14,8 +14,11 @@ module API
       json_data = {}
       parsed_xml = xml_parser.parse(hours_xml)
       day_list = parsed_xml.xpath("//day")
+      hour_list = parsed_xml.xpath("//hour").map { |element| element.element_children.map(&:text) } 
       day_list.each_with_index do |day, i|
-        data = {open_time: day.xpath("//from")[i].text.to_s, close_time: day.xpath("//to")[i].text.to_s, parsed_time: day.xpath("//date")[i].text.gsub("Z", "") }
+        data = {open_time: hour_list[i].empty? ? '00:00' : hour_list[i].first.to_s, 
+                close_time: hour_list[i].empty? ? '00:00' : hour_list[i].second.to_s, 
+                parsed_time: day.xpath("//date")[i].text.gsub("Z", "") }
         json_data[DateTime.parse(data[:parsed_time]).to_s] = build_json_from_data(data)
       end
       json_data.to_json
@@ -47,7 +50,7 @@ module API
         "Closes at #{close_time}"
       elsif (open_time == "00:00" && close_time == "23:59")
         "Open 24 Hours"
-      elsif (open_time == "01:00" && close_time == "01:00")
+      elsif ((open_time == "01:00" && close_time == "01:00") || (open_time == "00:00" && close_time == "00:00" ))
         "Closed"
       else
         "#{Time.parse(open_time).strftime("%l:%M%P")} -#{Time.parse(close_time).strftime("%l:%M%P")}"
