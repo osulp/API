@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<open_hours>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Martin Luther King Jr. Day</desc>
+    <from_date>2018-01-15Z</from_date>
+    <to_date>2018-01-15Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Monday">MONDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Memorial Day</desc>
+    <from_date>2018-05-28Z</from_date>
+    <to_date>2018-05-28Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Monday">MONDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Independence Day</desc>
+    <from_date>2018-07-04Z</from_date>
+    <to_date>2018-07-04Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Wednesday">WEDNESDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Labor Day</desc>
+    <from_date>2018-09-03Z</from_date>
+    <to_date>2018-09-03Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Monday">MONDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Event">EVENT</type>
+    <inherited>false</inherited>
+    <desc>End of Term</desc>
+    <from_date>2018-09-07Z</from_date>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Veterans Day</desc>
+    <from_date>2018-11-12Z</from_date>
+    <to_date>2018-11-12Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Thanksgiving holiday</desc>
+    <from_date>2018-11-22Z</from_date>
+    <to_date>2018-11-23Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Christmas Day (observed)</desc>
+    <from_date>2018-12-25Z</from_date>
+    <to_date>2018-12-25Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>New Year's Day (observed)</desc>
+    <from_date>2019-01-01Z</from_date>
+    <to_date>2019-01-01Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Tuesday">TUESDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+</open_hours>
