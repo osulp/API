@@ -13,7 +13,6 @@ class ApiController < ApplicationController
     alma_special_hours = AlmaSpecialHours.new
     @special_hours = API::SpecialHoursXmlToJsonParser.call(alma_special_hours.xml_document)
 
-    # @special_hours = alma_special_hours.xml_document
     render json: @special_hours
   end
 
