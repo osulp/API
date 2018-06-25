@@ -1,0 +1,7 @@
+<div class="todays_hours">
+  <% hours.each do |key, value| %>
+    <% day = Date.parse(key) %>
+    <h2><%= day.today? ? 'Today' : day.strftime("%A") %>:
+      <%= "#{value["formatted_hours"]}" %></h2>
+  <% end %>
+</div>

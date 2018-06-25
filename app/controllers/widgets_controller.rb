@@ -7,7 +7,10 @@ class WidgetsController < ApplicationController
       @hours = '{}'
     elsif @template == 'special_hours'
       @hours = alma_special_hours_request
+    elsif @template == 'todays_hours'
+      @hours = alma_todays_hours_request
     else
+
       @hours = alma_request
     end
 
@@ -34,6 +37,12 @@ class WidgetsController < ApplicationController
 
   def alma_request
     dates = [Date.today.strftime("%Y-%m-%d"), (Date.today+6.days).strftime("%Y-%m-%d")]
+    alma = Alma.new(dates.first, dates.last)
+    API::HoursXmlToJsonParser.call(alma.xml_document)
+  end
+
+  def alma_todays_hours_request
+    dates = [Date.today.strftime("%Y-%m-%d"), Date.today.strftime("%Y-%m-%d")]
     alma = Alma.new(dates.first, dates.last)
     API::HoursXmlToJsonParser.call(alma.xml_document)
   end

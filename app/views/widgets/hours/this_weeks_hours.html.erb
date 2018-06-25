@@ -1,9 +1,11 @@
-<h1>This Week's Hours</h1>
+<div class="this_weeks_hours">
+  <h1>This Week's Hours</h1>
+  <p>
+    <% hours.each do |key, value| %>
+      <% day = Date.parse(key) %>
+      <b><%= day.today? ? 'Today' : day.strftime("%A") %>:</b>
+      <%= "#{value["formatted_hours"]}" %><br>
+    <% end %>
+  </p>
+</div>
 
-<p>
-  <% hours.each do |key, value| %>
-    <% day = Date.parse(key) %>
-    <b><%= day.today? ? 'Today' : day.strftime("%A") %>:</b>
-    <%= "#{value["formatted_hours"]}" %><br>
-  <% end %>
-</p>
