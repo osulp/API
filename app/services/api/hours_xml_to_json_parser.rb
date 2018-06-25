@@ -50,7 +50,7 @@ module API
         "Closes at #{close_time}"
       elsif (open_time == "00:00" && close_time == "23:59")
         "Open 24 Hours"
-      elsif ((open_time == "01:00" && close_time == "01:00") || (open_time == "00:00" && close_time == "00:00" ))
+      elsif (open_time == close_time)
         "Closed"
       else
         "#{Time.parse(open_time).strftime("%l:%M%P")} -#{Time.parse(close_time).strftime("%l:%M%P")}"
