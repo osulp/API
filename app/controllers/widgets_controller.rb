@@ -10,7 +10,6 @@ class WidgetsController < ApplicationController
     elsif @template == 'todays_hours'
       @hours = alma_todays_hours_request
     else
-
       @hours = alma_request
     end
 
