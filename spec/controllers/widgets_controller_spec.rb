@@ -19,6 +19,7 @@ RSpec.describe WidgetsController, type: :controller do
 
     context "When this week's hours widget is returned" do
       before do
+        allow(subject).to receive(:alma_request).and_return(valid_json)
         allow(API::HoursXmlToJsonParser).to receive(:call).with(valid_xml, dates).and_return(valid_json)
         allow_any_instance_of(Alma).to receive(:xml_document).and_return(valid_xml)
         allow_any_instance_of(Alma).to receive(:fetch).and_return(valid_xml)
