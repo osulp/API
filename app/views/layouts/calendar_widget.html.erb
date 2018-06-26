@@ -21,7 +21,7 @@
                         if (data) {
                             var items = [];
                             $.each( data, function( key, val ) {
-                                items.push( "<b>" + val.string_date + "</b><br>" + val.formatted_hours );
+                                items.push( "<b>" + val.string_date + "</b><br>" + val.formatted_hours + "<br>" + val.event_desc );
                             });
 
                             $('.ajax_output').remove();
