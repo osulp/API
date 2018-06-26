@@ -4,6 +4,9 @@ describe API::HoursXmlToJsonParser do
   let(:service) { described_class }
   let(:xml) {}
   let(:formatted_time) {  }
+  let(:dates) {["2018-06-08", "2018-06-08"]}
+  let(:valid_special_hours_json) { File.read("spec/fixtures/alma_special_hours.json") }
+  let(:special_hours_xml) { File.read("spec/fixtures/alma_special_hours.xml") }
 
   describe "#call" do
     context "when only one day is requested" do
@@ -23,13 +26,15 @@ describe API::HoursXmlToJsonParser do
         </days>'
       }
       it "outputs JSON in a valid format" do
-        expect(JSON.parse(service.call(xml))[formatted_time]["open"]).to eq "12:00am"
-        expect(JSON.parse(service.call(xml))[formatted_time]["close"]).to eq " 2:59am"
-        expect(JSON.parse(service.call(xml))[formatted_time]["string_date"]).to eq "Fri, Jun  8, 2018"
-        expect(JSON.parse(service.call(xml))[formatted_time]["sortable_date"]).to eq "2018-06-08"
-        expect(JSON.parse(service.call(xml))[formatted_time]["formatted_hours"]).to eq "12:00am - 2:59am"
-        expect(JSON.parse(service.call(xml))[formatted_time]["open_all_day"]).to eq false
-        expect(JSON.parse(service.call(xml))[formatted_time]["closes_at_night"]).to eq true
+        allow(API::SpecialHoursXmlToJsonParser).to receive(:call).with(anything()).and_return(valid_special_hours_json)
+        allow(service).to receive(:special_events).and_return(valid_special_hours_json)
+        expect(JSON.parse(service.call(xml, dates))[formatted_time]["open"]).to eq "12:00am"
+        expect(JSON.parse(service.call(xml, dates))[formatted_time]["close"]).to eq " 2:59am"
+        expect(JSON.parse(service.call(xml, dates))[formatted_time]["string_date"]).to eq "Fri, Jun  8, 2018"
+        expect(JSON.parse(service.call(xml, dates))[formatted_time]["sortable_date"]).to eq "2018-06-08"
+        expect(JSON.parse(service.call(xml, dates))[formatted_time]["formatted_hours"]).to eq "12:00am - 2:59am"
+        expect(JSON.parse(service.call(xml, dates))[formatted_time]["open_all_day"]).to eq false
+        expect(JSON.parse(service.call(xml, dates))[formatted_time]["closes_at_night"]).to eq true
       end
     end
     context "when multiple days are requested" do
@@ -59,13 +64,15 @@ describe API::HoursXmlToJsonParser do
         </days>'
       }
       it "outputs JSON in a valid format" do
-        expect(JSON.parse(service.call(xml))[formatted_time]["open"]).to eq "12:00am"
-        expect(JSON.parse(service.call(xml))[formatted_time]["close"]).to eq " 2:59am"
-        expect(JSON.parse(service.call(xml))[formatted_time]["string_date"]).to eq "Fri, Jun  8, 2018"
-        expect(JSON.parse(service.call(xml))[formatted_time]["sortable_date"]).to eq "2018-06-08"
-        expect(JSON.parse(service.call(xml))[formatted_time]["formatted_hours"]).to eq "12:00am - 2:59am"
-        expect(JSON.parse(service.call(xml))[formatted_time]["open_all_day"]).to eq false
-        expect(JSON.parse(service.call(xml))[formatted_time]["closes_at_night"]).to eq true
+        allow(API::SpecialHoursXmlToJsonParser).to receive(:call).with(anything()).and_return(valid_special_hours_json)
+        allow(service).to receive(:special_events).and_return(valid_special_hours_json)
+        expect(JSON.parse(service.call(xml, dates))[formatted_time]["open"]).to eq "12:00am"
+        expect(JSON.parse(service.call(xml, dates))[formatted_time]["close"]).to eq " 2:59am"
+        expect(JSON.parse(service.call(xml, dates))[formatted_time]["string_date"]).to eq "Fri, Jun  8, 2018"
+        expect(JSON.parse(service.call(xml, dates))[formatted_time]["sortable_date"]).to eq "2018-06-08"
+        expect(JSON.parse(service.call(xml, dates))[formatted_time]["formatted_hours"]).to eq "12:00am - 2:59am"
+        expect(JSON.parse(service.call(xml, dates))[formatted_time]["open_all_day"]).to eq false
+        expect(JSON.parse(service.call(xml, dates))[formatted_time]["closes_at_night"]).to eq true
       end
     end
   end

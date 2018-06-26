@@ -10,6 +10,7 @@ describe ApiController, type: :controller do
     let(:xml) { File.read("spec/fixtures/alma_open_hours.xml") }
     let(:date_from) { Date.today.strftime("%Y-%m-%d") }
     let(:date_to) { Date.today.strftime("%Y-%m-%d") }
+    let(:dates) { [date_from, date_to] }
     let(:cached_minutes) { "1" }
 
     before do
@@ -29,7 +30,7 @@ describe ApiController, type: :controller do
 
     context "When no day is provided" do
       before do
-        allow(API::HoursXmlToJsonParser).to receive(:call).with(anything()).and_return(valid_json)
+        allow(API::HoursXmlToJsonParser).to receive(:call).with(anything(), dates).and_return(valid_json)
         allow(alma).to receive(:xml_document).and_return(valid_xml)
       end
 
@@ -42,7 +43,7 @@ describe ApiController, type: :controller do
     context "When a day is provided" do
       let(:day) { "2018-06-08" }
       before do
-        allow(API::HoursXmlToJsonParser).to receive(:call).with(anything()).and_return(valid_json)
+        allow(API::HoursXmlToJsonParser).to receive(:call).with(anything(), dates).and_return(valid_json)
         allow(alma).to receive(:xml_document).and_return(valid_xml)
       end
 
