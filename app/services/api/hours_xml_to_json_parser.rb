@@ -16,7 +16,8 @@ module API
       day_list = parsed_xml.xpath("//day")
       hour_list = parsed_xml.xpath("//hour").map { |element| element.element_children.map(&:text) } 
       long_hour_list = parsed_xml.xpath("//hours").map { |element| element.element_children.map(&:text) } 
-      hour_list = long_hour_list.each_with_index.map { |obj, i| obj.blank? ? [] : hour_list[i] }
+      closed_index = long_hour_list.include?([]) ? long_hour_list.index([]) : nil
+      hour_list.insert(closed_index, [])
       day_list.each_with_index do |day, i|
         data = {open_time: hour_list[i].blank? ? '00:00' : hour_list[i].first.to_s, 
                 close_time: hour_list[i].blank? ? '00:00' : hour_list[i].second.to_s, 
