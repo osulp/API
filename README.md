@@ -7,7 +7,7 @@ This application is a Rails API application that serves up information to those 
 This application uses docker. To set up the application, simply run
 `docker-compose build && docker-compose up`
 
-#Setup (Puma/Rails)
+# Setup (Puma/Rails)
 
 This application uses:
 `Ruby Version 2.5.1`
