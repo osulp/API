@@ -17,7 +17,7 @@ then run `rails s`
 
 # Querying the API
 
-To query the API, make a POST request to api.library.oregonstate.edu
+To query the API, make a `POST` request to `api.library.oregonstate.edu`
 
 ## Hours
 
