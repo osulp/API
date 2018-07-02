@@ -40,8 +40,9 @@ The API will return a JSON object which looks like:
   event_desc: "",
   event_status: ""
 }
+```
 
-event_desc is the description of any special events found for a date or range of dates given. 
-event_status describes whether or not the library is open or closed
+`event_desc` is the description of any special events found for a date or range of dates given. 
+`event_status` describes whether or not the library is open or closed
 
 the key to this JSON Object is `2018-06-12T00:00:00+00:00`
