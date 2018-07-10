@@ -57,6 +57,8 @@ module API
         "Closed"
       elsif status == "OPEN" && from_hour.present? && to_hour.present?
         "#{from_hour} - #{to_hour}"
+      elsif status == "OPEN"
+        "Open"
       else
        status
       end
