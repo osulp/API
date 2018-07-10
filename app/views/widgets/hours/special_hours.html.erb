@@ -4,9 +4,9 @@
   <ul>
     <% hours.each do |key, value| %>
       <li>
-        <b><%= "#{value["from_date"]} - #{value["to_date"]}" %></b>
+        <b><%= "#{value["formatted_dates"]}" %></b>
         <ul>
-          <li><%= "#{value["desc"]}: #{value["status"]}" %></li>
+          <li><%= "#{value["desc"]}: #{value["formatted_hours"]}" %></li>
         </ul>
       </li>
     <% end %>
