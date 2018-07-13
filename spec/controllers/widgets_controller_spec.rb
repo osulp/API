@@ -29,7 +29,6 @@ RSpec.describe WidgetsController, type: :controller do
         post :hours, params: { template: 'this_weeks_hours', format: :js }
         expect(assigns(:hours)).to include(date_from)
         expect(assigns(:hours)).to include(date_to)
-        expect(response.body).to include("This Week's Hours")
       end
 
       it "responds to html" do

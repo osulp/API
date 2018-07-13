@@ -3,8 +3,10 @@ class WidgetsController < ApplicationController
   before_action :set_params
 
   def hours
+    @layout = 'basic_widget'
     if @template == 'calendar'
       @hours = '{}'
+      @layout = 'calendar_widget'
     elsif @template == 'special_hours'
       @hours = alma_special_hours_request
     elsif @template == 'todays_hours'
@@ -31,7 +33,11 @@ class WidgetsController < ApplicationController
   end
 
   def html_content
-    ActionController::Base.new.render_to_string("widgets/hours/#{params[:template]}", layout: 'calendar_widget')
+    ActionController::Base.new.render_to_string("widgets/hours/#{params[:template]}",
+                                                layout: @layout,
+                                                :locals => {
+                                                    :hours => JSON.parse(@hours)
+                                                })
   end
 
   def alma_request
