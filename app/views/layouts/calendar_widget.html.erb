@@ -8,6 +8,10 @@
     <style> body {font-family: 'Open sans',sans-serif;} </style>
     <script>
         $( function() {
+            function isEmpty(obj) {
+                for (var x in obj) { return false; }
+                return true;
+            }
             function showHours(dateText) {
                 var ajaxUrl = '<%= Rails.application.config.action_mailer.default_url_options[:protocol] %>://<%= Rails.application.config.action_mailer.default_url_options[:host] %>/hours'
                 $.ajax({
@@ -18,13 +22,16 @@
                     },
                     dataType: 'json',
                     success: function (data) {
-                        if (data) {
+                        $('.ajax_output').remove();
+                        if (isEmpty(data) == true) {
+                            $('#libHours').prepend('<div class=\"ajax_output\"><p><%= I18n.t 'no_hours_available' %></p></div>');
+                        } else {
+
                             var items = [];
                             $.each( data, function( key, val ) {
                                 items.push( "<b>" + val.string_date + "</b><br>" + val.formatted_hours + "<br>" + val.event_desc );
                             });
 
-                            $('.ajax_output').remove();
                             $('#libHours').prepend('<div class=\"ajax_output\"><p>' + items.join("") +'</p></div>');
 
                         }

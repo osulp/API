@@ -1,5 +1,8 @@
 <div class="this_weeks_hours">
   <p>
+    <% if hours.blank? %>
+      <strong><%= I18n.t 'no_hours_available' %></strong>
+    <% end %>
     <% hours.each do |key, value| %>
       <% day = Date.parse(key) %>
       <strong><%= day.today? ? 'Today' : day.strftime("%A") %>:</strong>

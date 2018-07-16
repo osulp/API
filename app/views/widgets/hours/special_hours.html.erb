@@ -1,4 +1,7 @@
 <div class="special_dates">
+  <% if hours.blank? %>
+    <strong><%= I18n.t 'no_hours_available' %></strong>
+  <% end %>
   <ul>
     <% hours.each do |key, value| %>
       <li>

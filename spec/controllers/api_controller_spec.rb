@@ -52,5 +52,17 @@ describe ApiController, type: :controller do
         expect(assigns(:hours)["valid_json_with_data"]["data"]).to eq "data"
       end
     end
+
+    context "When a day is provided and no hours are available" do
+      before do
+        allow(alma).to receive(:xml_document).and_return(nil)
+        allow(API::HoursXmlToJsonParser).to receive(:call).with(anything(), dates).and_return(nil)
+      end
+
+      it "responds to json" do
+        post :hours
+        expect(assigns(:hours)).to be_nil
+      end
+    end
   end
 end
