@@ -18,7 +18,7 @@ class AlmaSpecialHours
   # Fetch the Alma Special Hours xml document for the date specified
   # @return [XML::Document]
   def fetch_dates
-    logger = Logger.new(STDOUT)
+    logger = Rails.logger
     begin
       Rails.cache.fetch("#{special_hours_url}/AlmaSpecialHours/fetch", expires_in: cached_for) { open(special_hours_url).read }
     rescue ArgumentError

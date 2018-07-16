@@ -3,7 +3,7 @@ require 'cgi'
 
 class AlmaHours
   def self.fetch(date_from, date_to, url, apikey, cached_for)
-    logger = Logger.new(STDOUT)
+    logger = Rails.logger
     begin
       headers  = { CGI::escape('from') => date_from, CGI::escape('to') => date_to, CGI::escape('apikey') => apikey }
       url = "#{url}?#{headers.to_query}"
