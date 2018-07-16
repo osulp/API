@@ -36,5 +36,25 @@ RSpec.describe WidgetsController, type: :controller do
         expect(response.body).to include("widget_datepicker")
       end
     end
+
+    context "when no hours are available" do
+      before do
+        allow(subject).to receive(:alma_request).and_return(nil)
+        allow(API::HoursXmlToJsonParser).to receive(:call).with(valid_xml, dates).and_return(nil)
+        allow_any_instance_of(Alma).to receive(:xml_document).and_return(nil)
+        allow_any_instance_of(Alma).to receive(:fetch).and_return(nil)
+      end
+
+      it "returns no hours available when rendering inline js" do
+        post :hours, params: { template: 'this_weeks_hours', format: :js }
+        expect(response.body).to include("No hours available.")
+      end
+
+      it "returns no hours available when rendering html" do
+        get :hours, params: { template: 'calendar', format: :html }
+        expect(response.body).to include("No hours available.")
+      end
+
+    end
   end
 end

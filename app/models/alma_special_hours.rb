@@ -18,13 +18,15 @@ class AlmaSpecialHours
   # Fetch the Alma Special Hours xml document for the date specified
   # @return [XML::Document]
   def fetch_dates
+    logger = Logger.new(STDOUT)
     begin
       Rails.cache.fetch("#{special_hours_url}/AlmaSpecialHours/fetch", expires_in: cached_for) { open(special_hours_url).read }
-
     rescue ArgumentError
-      raise BadRequest.new(), "Invalid request"
+      logger.error("ArgumentError: invalid request")
+      return nil
     rescue StandardError => e
-      raise e
+      logger.error("StandardError: #{e.message}")
+      return nil
     end
   end
 

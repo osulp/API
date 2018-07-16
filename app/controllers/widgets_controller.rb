@@ -8,11 +8,11 @@ class WidgetsController < ApplicationController
       @hours = '{}'
       @layout = 'calendar_widget'
     elsif @template == 'special_hours'
-      @hours = alma_special_hours_request
+      @hours = alma_special_hours_request || '{}'
     elsif @template == 'todays_hours'
-      @hours = alma_todays_hours_request
+      @hours = alma_todays_hours_request || '{}'
     else
-      @hours = alma_request
+      @hours = alma_request || '{}'
     end
 
     respond_to do |format|
