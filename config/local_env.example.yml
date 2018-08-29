@@ -15,5 +15,6 @@ API_DEPLOYED_REVISION_LOG: /path/to/app/revisions.log
 # Alma
 ALMA_OPEN_HOURS_URL: 'https://url/to/alma/api'
 ALMA_SPECIAL_HOURS_URL: 'https://url/to/special/hours/alma/api'
+ALMA_SPECIAL_HOURS_SCOPE: 'Scope'
 ALMA_API_KEY: 'almaapikey123'
 ALMA_CACHED_FOR: '720'

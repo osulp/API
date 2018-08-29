@@ -28,7 +28,23 @@ module API
         }
         json_data[i.to_s] = data
       end
-      json_data.to_json
+      upcoming_special_dates(json_data)
+    end
+
+    def self.upcoming_special_dates(json_data)
+      # only include
+      #
+      # - items with type EXCEPTION or EVENT
+      # - items with future dates
+
+      json_data.select { |h,v| v[:type] == "EXCEPTION" || v[:type] == "EVENT" || upcoming_date?(v[:from_date], v[:to_date]) }.to_json
+    end
+
+    def self.upcoming_date?(from_date, to_date)
+      # TODO: return true when current or upcoming date:
+      # - items when date range [from_date, to_date] is in the future OR
+      # - current date is within range [from_date, to_date]
+      date_range = DateTime.parse(from_date)..DateTime.parse(to_date)
     end
 
     def self.get_formatted_dates(day)
