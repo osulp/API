@@ -34,17 +34,21 @@ module API
     def self.upcoming_special_dates(json_data)
       # only include
       #
-      # - items with type EXCEPTION or EVENT
-      # - items with future dates
-
-      json_data.select { |h,v| v[:type] == "EXCEPTION" || v[:type] == "EVENT" || upcoming_date?(v[:from_date], v[:to_date]) }.to_json
+      # - items in which the library is closed all day
+      # - items with future dates (skip dates in the past)
+      json_data.select { |h,v| closed_all_day?(v) && upcoming_date?(v[:from_date], v[:to_date]) }.to_json
     end
 
+    def self.closed_all_day?(record)
+      record[:type] == "EXCEPTION" && record[:status] == "CLOSE" && record[:day_of_week].blank? && record[:from_hour] == "00:00" && record[:to_hour] == "23:59"
+    end
+
+    # return true when current or upcoming date:
+    # - items when date range [from_date, to_date] is in the future OR
+    # - current date is within range [from_date, to_date]
     def self.upcoming_date?(from_date, to_date)
-      # TODO: return true when current or upcoming date:
-      # - items when date range [from_date, to_date] is in the future OR
-      # - current date is within range [from_date, to_date]
       date_range = DateTime.parse(from_date)..DateTime.parse(to_date)
+      date_range === Date.today.beginning_of_day || date_range.first.future?
     end
 
     def self.get_formatted_dates(day)
