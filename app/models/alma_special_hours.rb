@@ -31,8 +31,12 @@ class AlmaSpecialHours
   end
 
   def special_hours_url
-    headers = { CGI::escape('apikey') => apikey }
+    headers = { CGI::escape('apikey') => apikey, CGI::escape('scope') => special_hours_scope }
     "#{alma_url}?#{headers.to_query}"
+  end
+
+  def special_hours_scope
+    ENV['ALMA_SPECIAL_HOURS_SCOPE']
   end
 
   def alma_url

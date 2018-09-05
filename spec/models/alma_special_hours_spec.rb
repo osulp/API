@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe AlmaSpecialHours do
   let(:alma_special_hours) { described_class.new }
-  let(:special_hours_url) { "#{ENV['ALMA_SPECIAL_HOURS_URL']}?apikey=#{ENV['ALMA_API_KEY']}" }
+  let(:special_hours_url) { "#{ENV['ALMA_SPECIAL_HOURS_URL']}?apikey=#{ENV['ALMA_API_KEY']}&scope=#{ENV['ALMA_SPECIAL_HOURS_SCOPE']}" }
   let(:xml) { File.read("spec/fixtures/alma_special_hours.xml") }
   let(:cached_minutes) { "1" }
 
@@ -10,6 +10,7 @@ RSpec.describe AlmaSpecialHours do
     ENV['ALMA_SPECIAL_HOURS_URL'] = 'https://url/to/alma/special/hours/api'
     ENV['ALMA_API_KEY'] = 'almaapikey123'
     ENV['ALMA_CACHED_FOR'] = '720'
+    ENV['ALMA_SPECIAL_HOURS_SCOPE'] = 'MyBranch'
 
     stub_request(:get, special_hours_url).
         with(
