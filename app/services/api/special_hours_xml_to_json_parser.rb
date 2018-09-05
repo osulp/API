@@ -40,7 +40,7 @@ module API
     end
 
     def self.closed_all_day?(record)
-      record[:type] == "EXCEPTION" && record[:status] == "CLOSE" && record[:day_of_week].blank? && record[:from_hour] == "00:00" && record[:to_hour] == "23:59"
+      record[:type] == "EXCEPTION" && record[:status] == "CLOSE" && record[:from_hour] == "00:00" && record[:to_hour] == "23:59"
     end
 
     # return true when current or upcoming date:
