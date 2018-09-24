@@ -13,49 +13,109 @@ module API
     def self.parse_xml(hours_xml, dates)
       json_data = {}
       parsed_xml = xml_parser.parse(hours_xml)
-      day_list = parsed_xml.xpath("//day")
-      hour_list = parsed_xml.xpath("//hour").map { |element| element.element_children.map(&:text) }
-      long_hour_list = parsed_xml.xpath("//hours").map { |element| element.element_children.map(&:text) } 
-      closed_index = long_hour_list.include?([]) ? long_hour_list.index([]) : nil
-      hour_list.insert(closed_index, []) unless closed_index.nil?
       extra_data = get_special_info_list(dates)
+      day_list = parsed_xml.xpath("//day")
       day_list.each_with_index do |day, i|
-        data = {open_time: hour_list[i].blank? ? '00:00' : hour_list[i].first.to_s, 
-                close_time: hour_list[i].blank? ? '00:00' : hour_list[i].second.to_s, 
-                parsed_time: day.xpath("//date")[i].text.gsub("Z", "") }
-        json_data[DateTime.parse(data[:parsed_time]).to_s] = build_json_from_data(data, extra_data)
+        data = {
+          open: get_formatted_open_time(day),
+          close: get_formatted_close_time(day),
+          string_date: get_formatted_date(day),
+          sortable_date: parse_child(day.xpath("date")).gsub("Z", ""),
+          formatted_hours: get_formatted_hours(day),
+          open_all_day: open_all_day?(day),
+          closes_at_night: closes_at_night?(day),
+          event_desc: get_desc_from_extra(day, extra_data),
+          event_status: get_status_from_extra(day, extra_data)
+        } 
+        json_data[DateTime.parse(parse_child(day.xpath("date"))).to_s] = data
       end
       json_data.to_json
     end
 
-    def self.build_json_from_data(data, extra_data)
-      { open: Time.parse(data[:open_time]).strftime("%l:%M%P"),
-        close: Time.parse(data[:close_time]).strftime("%l:%M%P"),
-        string_date: DateTime.parse(data[:parsed_time].to_s).strftime("%a, %b %e, %Y"),
-        sortable_date: data[:parsed_time].to_s,
-        formatted_hours: formatted_hours(data[:open_time], data[:close_time]),
-        open_all_day: open_all_day?(data[:open_time], data[:close_time]),
-        closes_at_night: closes_at_night?(data[:close_time]),
-        event_desc: get_desc_from_extra(data[:parsed_time], extra_data),
-        event_status: get_status_from_extra(data[:parsed_time], extra_data)
-      }
+    def self.parse_hours(xml)
+      json_data = {}
+      hours = xml.present? ? xml.xpath("hours") : []
+      hours.each_with_index do |hour, i|
+        data = {
+          hour: parse_hour(hour)
+        } 
+        json_data[i.to_s] = data
+      end
+      json_data
+    end
+
+    def self.parse_hour(xml)
+      json_data = {}
+      hour = xml.present? ? xml.xpath("hour") : []
+      hour.each_with_index do |h, i|
+        data = {
+          open_time: parse_child(h.xpath("from")),
+          close_time: parse_child(h.xpath("to"))
+        } 
+        json_data[i.to_s] = data
+      end
+      json_data
+    end
+
+    def self.parse_open_time(day)
+      hours = parse_hours(day)
+      if hours_available?(hours) && hours["0"][:hour]["0"][:open_time].present?
+        hours["0"][:hour]["0"][:open_time]
+      end
+    end
+
+    def self.parse_close_time(day)
+      hours = parse_hours(day)
+      if hours_available?(hours) && hours["0"][:hour]["0"][:close_time].present?
+        hours["0"][:hour]["0"][:close_time]
+      end
+    end
+
+    def self.hours_available?(hours)
+      hours.present? && hours["0"].present? && hours["0"][:hour].present? && hours["0"][:hour]["0"].present?
+    end
+
+    def self.get_formatted_open_time(day)
+      open_time = parse_open_time(day)
+      open_time.present? ? Time.parse(open_time).strftime("%l:%M%P") : ""
+    end
+
+    def self.get_formatted_close_time(day)
+      close_time = parse_close_time(day)
+      close_time.present? ? Time.parse(close_time).strftime("%l:%M%P") : ""
+    end
+
+    def self.get_formatted_date(day)
+      date = parse_child(day.xpath("date"))
+      DateTime.parse(date.to_s).strftime("%a, %b %e, %Y")
+    end
+
+    def self.get_formatted_hours(day)
+      open_time = parse_open_time(day)
+      close_time = parse_close_time(day)
+      formatted_hours(open_time, close_time)
     end
 
     def self.get_desc_from_extra(day, extra_data)
-      data = extra_data[DateTime.parse(day).to_s]
+      date = parse_child(day.xpath("date"))
+      data = extra_data[DateTime.parse(date).to_s]
       data.present? ? data.first[:desc] : ''
     end
 
     def self.get_status_from_extra(day, extra_data)
-      data = extra_data[DateTime.parse(day).to_s]
+      date = parse_child(day.xpath("date"))
+      data = extra_data[DateTime.parse(date).to_s]
       data.present? ? data.first[:status] : ''
     end
 
-    def self.open_all_day?(open_time, close_time)
+    def self.open_all_day?(day)
+      open_time = parse_open_time(day)
+      close_time = parse_close_time(day)
       (open_time == "00:00" && close_time == "23:59") ? true : false
     end
 
-    def self.closes_at_night?(close_time)
+    def self.closes_at_night?(day)
+      close_time = parse_close_time(day)
       ['00:14','23:59','00:59'].include?(close_time) ? false : true
     end
 
@@ -100,6 +160,10 @@ module API
         end
       end
       info
+    end
+
+    def self.parse_child(xml)
+      xml.present? ? xml.text : ""
     end
 
     def self.special_events
