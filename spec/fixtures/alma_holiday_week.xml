@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<days>
+  <day>
+    <date>2018-11-18Z</date>
+    <day_of_week desc="Sunday">1</day_of_week>
+    <hours>
+      <hour>
+        <from>10:00</from>
+        <to>23:59</to>
+      </hour>
+    </hours>
+  </day>
+  <day>
+    <date>2018-11-19Z</date>
+    <day_of_week desc="Monday">2</day_of_week>
+    <hours>
+      <hour>
+        <from>00:00</from>
+        <to>23:59</to>
+      </hour>
+    </hours>
+  </day>
+  <day>
+    <date>2018-11-20Z</date>
+    <day_of_week desc="Tuesday">3</day_of_week>
+    <hours>
+      <hour>
+        <from>00:00</from>
+        <to>23:59</to>
+      </hour>
+    </hours>
+  </day>
+  <day>
+    <date>2018-11-21Z</date>
+    <day_of_week desc="Wednesday">4</day_of_week>
+    <hours>
+      <hour>
+        <from>00:00</from>
+        <to>22:00</to>
+      </hour>
+    </hours>
+  </day>
+  <day>
+    <date>2018-11-22Z</date>
+    <day_of_week desc="Thursday">5</day_of_week>
+    <hours/>
+  </day>
+  <day>
+    <date>2018-11-23Z</date>
+    <day_of_week desc="Friday">6</day_of_week>
+    <hours/>
+  </day>
+  <day>
+    <date>2018-11-24Z</date>
+    <day_of_week desc="Saturday">7</day_of_week>
+    <hours>
+      <hour>
+        <from>10:00</from>
+        <to>22:00</to>
+      </hour>
+    </hours>
+  </day>
+</days>
