@@ -38,7 +38,7 @@ module API
 
       # (1) for each day in dates get standard opening hours (type WEEK)
       date_range = DateTime.parse(dates.first)..DateTime.parse(dates.last)
-      week_days = date_range.map.with_index do |day, i|
+      date_range.map.with_index do |day, i|
         # (2) override opening hours if special date (type EXCEPTION) is found
         std_opening_data = std_opening_hours(json_data, exceptions_data, day)
 
@@ -46,7 +46,7 @@ module API
         # field
         json_hours_data[day.to_s] = std_opening_data
       end
-      json_hours_data
+      json_hours_data.to_json
     end
 
     def self.get_special_info_list(dates, json_data)
@@ -69,7 +69,7 @@ module API
           date_range = DateTime.parse(e.last["from_date"])
         end
         if date_range === day.beginning_of_day
-          info << { status: e.last["status"], desc: e.last["desc"] }
+          info << { status: e.last["status"], desc: e.last["desc"], from_hour: e.last["from_hour"], to_hour: e.last["to_hour"] }
         end
       end
       info
@@ -80,45 +80,58 @@ module API
       day_of_week = date.strftime("%A").upcase
       opening_hours = json_data.select {|h,v| v[:day_of_week] == day_of_week && v[:type] == "WEEK"}
 
-      if opening_hours.present? && opening_hours.count == 1
-        from_hour = opening_hours.map { |h,v| v[:from_hour]}.first
-        to_hour = opening_hours.map { |h,v| v[:to_hour]}.first
+      # get std opening hours
+      from_hour = opening_hours.map { |h,v| v[:from_hour]}.first
+      to_hour = opening_hours.map { |h,v| v[:to_hour]}.first
 
-        data = {
-          open: get_formatted_open_time(from_hour),
-          close: get_formatted_close_time(to_hour),
-          string_date: date.strftime("%a, %b %e, %Y"),
-          sortable_date: date.strftime("%Y-%m-%d"),
-          formatted_hours: formatted_hours(from_hour, to_hour),
-          open_all_day: open_all_day?(from_hour, to_hour),
-          closes_at_night: closes_at_night?(to_hour),
-          event_desc: get_event_desc(opening_hours, date, exceptions_data),
-          event_status: get_event_status(opening_hours, date, exceptions_data)
-        }
+      exception = exceptions_data[date.to_s]
+
+      if exception.present? && exception.first.present?
+        ex_from_hour = exception.first[:from_hour]
+        ex_to_hour = exception.first[:to_hour]
+
+        # if closed all day for date, then override from_hour and to_hour
+        if closed_all_day?(exception.first)
+          from_hour = ex_from_hour
+          to_hour = ex_to_hour
+          event_desc = exception.first[:desc]
+          event_status = exception.first[:status]
+        elsif (from_hour < ex_from_hour) && (to_hour == ex_to_hour)
+          # if it's partially closed, then calculate new from_hour and to_hour
+          to_hour = (Time.parse(ex_from_hour)-1.minutes).strftime("%H:%M")
+        end
       end
+
+      data = {
+        open: get_formatted_open_time(from_hour),
+        close: get_formatted_close_time(to_hour),
+        string_date: date.strftime("%a, %b %e, %Y"),
+        sortable_date: date.strftime("%Y-%m-%d"),
+        formatted_hours: formatted_hours(from_hour, to_hour),
+        open_all_day: open_all_day?(from_hour, to_hour),
+        closes_at_night: closes_at_night?(to_hour),
+        event_desc: event_desc.present? ? event_desc : "",
+        event_status: event_status.present? ? event_status : ""
+      }
       data
     end
 
     def self.exception_hours(json_data)
-      json_data.select { |h,v| closed_all_day?(v) }.to_json
+      json_data.select { |h,v| exception_close?(v) }.to_json
     end
 
     def self.get_event_desc(hours, date, exceptions_data)
-      desc = hours.map { |h,v| v[:desc]}.first
-      type = hours.map { |h,v| v[:type]}.first
+      exception = exceptions_data[date.to_s]
+      event_desc = exception.present? && closed_all_day?(exception.first) ? exception.first[:desc] : ""
 
-      data = exceptions_data[date.to_s]
-      event_desc = data.present? ? data.first[:desc] : desc
-
-      event_desc.present? && type.present? ? event_desc : ""
+      event_desc.present? ? event_desc : ""
     end
 
     def self.get_event_status(hours, date, exceptions_data)
-      status = hours.map { |h,v| v[:status]}.first
-      data = exceptions_data[date.to_s]
-      event_status = data.present? ? data.first[:status] : status
+      exception = exceptions_data[date.to_s]
+      event_status = exception.present? && closed_all_day?(exception.first) ? exception.first[:status] : ""
 
-      event_status.present? && status.present? ? event_status : ""
+      event_status.present? ? event_status : ""
     end
 
     def self.get_formatted_open_time(from_hour)
@@ -153,6 +166,10 @@ module API
 
     def self.closed_all_day?(record)
       record[:type] == "EXCEPTION" && record[:status] == "CLOSE" && record[:from_hour] == "00:00" && record[:to_hour] == "23:59"
+    end
+
+    def self.exception_close?(record)
+      record[:type] == "EXCEPTION" && record[:status] == "CLOSE"
     end
 
     def self.get_formatted_dates(day)
