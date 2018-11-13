@@ -22,9 +22,7 @@ module API
             from_hour: parse_child(day.xpath("from_hour")),
             to_hour: parse_child(day.xpath("to_hour")),
             day_of_week: parse_child(day.xpath("day_of_week")),
-            status: parse_child(day.xpath("status")),
-            formatted_hours: get_formatted_hours(day),
-            formatted_dates: get_formatted_dates(day)
+            status: parse_child(day.xpath("status"))
         }
         json_data[i.to_s] = data
       end
@@ -87,6 +85,7 @@ module API
       @event_desc = ""
       @event_status = ""
       @all_exceptions = {}
+      @all_hours_raw = {}
 
       # get special hours and override std opening hours
       exceptions = exceptions_data[date.to_s]
@@ -108,39 +107,59 @@ module API
     end
 
     def self.override_hours(exceptions, date)
+      week_from = @from_hour
+      week_to = @to_hour
+      if exceptions.present?
+        exceptions.each_with_index do |e, index|
+          if index == 0
+            # first exception
+            first_exception = e
 
-      if exceptions.present? && exceptions.count >= 1
-        exception = exceptions.first
-        ex_from_hour = exception[:from_hour]
-        ex_to_hour = exception[:to_hour]
+            # if closed all day for date, then override from_hour and to_hour
+            if closed_all_day?(first_exception)
+              @from_hour = ''
+              @to_hour = ''
+              @event_desc = first_exception[:desc]
+              @event_status = first_exception[:status]
+            elsif (Time.parse(@from_hour) < Time.parse(first_exception[:from_hour])) && (@to_hour == first_exception[:to_hour])
+              # partially closed, we close early
+              @to_hour = (Time.parse(first_exception[:from_hour])).strftime("%H:%M")
+            elsif (Time.parse(@to_hour) > Time.parse(first_exception[:to_hour])) && (@from_hour == first_exception[:from_hour])
+              # partially closed, we open late
+              @from_hour = (Time.parse(first_exception[:to_hour])).strftime("%H:%M")
+            elsif first_exception[:status] == "OPEN" && first_exception[:from_hour] == "00:00"
+              @from_hour = first_exception[:from_hour]
+              @to_hour = first_exception[:to_hour]
+              @event_desc = ""
+              @event_status = ""
+            end
 
-        # if closed all day for date, then override from_hour and to_hour
-        if closed_all_day?(exception)
-          @from_hour = ''
-          @to_hour = ''
-          @event_desc = exception[:desc]
-          @event_status = exception[:status]
-        elsif (@from_hour < ex_from_hour) && (@to_hour == ex_to_hour)
-          # partially closed, we close early
-          @to_hour = (Time.parse(ex_from_hour)).strftime("%H:%M")
-        elsif (@to_hour > ex_to_hour) && (@from_hour == ex_from_hour)
-          # partially closed, we open late
-          @from_hour = (Time.parse(ex_to_hour)).strftime("%H:%M")
+          else
+            # partially closed, but we have multiple from/to pairs
+
+            if exceptions[index-1].present? && exceptions[index].present?
+              prev_pair = exceptions[index-1]
+              # the next exception is also close, so we should calculate the
+              # open pair in between assuming regular week hours are also open
+
+              if e[:status] == "CLOSE" && prev_pair[:status] == "CLOSE" && Time.parse(e[:from_hour]) > Time.parse(prev_pair[:to_hour])
+                tmp_from = Time.parse(prev_pair[:to_hour])+1.minute
+                tmp_to = Time.parse(e[:from_hour])-1.minute
+                if (Time.parse(week_from)..Time.parse(week_to)).include?(tmp_from..tmp_to)
+                  @all_hours_raw[tmp_from] = {
+                    from_hour: (tmp_from).strftime("%H:%M"),
+                    to_hour: (tmp_to).strftime("%H:%M"),
+                    status: "OPEN"
+                  }
+                end
+              end
+            end
+          end
+          @all_hours_raw[Time.parse(e[:from_hour])] = { from_hour: e[:from_hour], to_hour: e[:to_hour], status: e[:status], desc: e[:desc]}
+          # add all available exceptions to the @all_exceptions hash
+          @all_exceptions[Time.parse(e[:from_hour])] = e
         end
-
-        # partially closed, but we have multiple open/close pairs, so we take
-        # the first open/close for the main open/close data
-        if exceptions.count > 1
-          @from_hour = exception[:from_hour]
-          @to_hour = exception[:to_hour]
-          @event_desc = ""
-          @event_status = ""
-        end
-
-        # and add the rest (exceptions) to the @all_exceptions hash
-        exceptions.each_with_index do |e, i|
-          @all_exceptions[i] = e
-        end
+        # byebug if date == DateTime.parse("2018-12-10")
       end
     end
 
@@ -201,7 +220,6 @@ module API
       first_exception = exceptions.first.present? ? exceptions.first : []
       last_exception = exceptions.last.present? ? exceptions.last : []
 
-      # byebug if date == DateTime.parse("2018-12-02")
       if first_exception.second.present? && last_exception.second.present? && first_exception.second[:from_hour] == "00:00" && last_exception.second[:status] == "OPEN"
         ['00:14','23:59','00:59'].include?(last_exception.second[:to_hour]) ? false : true
       else
