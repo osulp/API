@@ -85,18 +85,27 @@ module API
       @event_desc = ""
       @event_status = ""
       @all_exceptions = {}
-      @all_hours_raw = {}
+      @open_hours_and_exceptions = {}
 
       # get special hours and override std opening hours
       exceptions = exceptions_data[date.to_s]
       override_hours(exceptions, date)
+
+      all_open_exceptions = @open_hours_and_exceptions.select {|h,v| v[:status] == "OPEN" }
+      if all_open_exceptions.present?
+        all_formatted_hours = all_open_exceptions.map {|h,v| formatted_hours(v[:from_hour],v[:to_hour])}.join(", ")
+      else
+        all_formatted_hours = formatted_hours(@from_hour, @to_hour)
+      end
+
+      # byebug if date == DateTime.parse("2018-12-01")
 
       data = {
         open: get_formatted_open_time(@from_hour),
         close: get_formatted_close_time(@to_hour),
         string_date: date.strftime("%a, %b %-d, %Y"),
         sortable_date: date.strftime("%Y-%m-%d"),
-        formatted_hours: formatted_hours(@from_hour, @to_hour),
+        formatted_hours: all_formatted_hours,
         open_all_day: open_all_day?(@from_hour, @to_hour),
         closes_at_night: closes_at_night?(@to_hour, date),
         event_desc: @event_desc.present? ? @event_desc : "",
@@ -143,10 +152,10 @@ module API
               # open pair in between assuming regular week hours are also open
 
               if e[:status] == "CLOSE" && prev_pair[:status] == "CLOSE" && Time.parse(e[:from_hour]) > Time.parse(prev_pair[:to_hour])
-                tmp_from = Time.parse(prev_pair[:to_hour])+1.minute
-                tmp_to = Time.parse(e[:from_hour])-1.minute
+                tmp_from = Time.parse(prev_pair[:to_hour])
+                tmp_to = Time.parse(e[:from_hour])
                 if (Time.parse(week_from)..Time.parse(week_to)).include?(tmp_from..tmp_to)
-                  @all_hours_raw[tmp_from] = {
+                  @open_hours_and_exceptions[tmp_from] = {
                     from_hour: (tmp_from).strftime("%H:%M"),
                     to_hour: (tmp_to).strftime("%H:%M"),
                     status: "OPEN"
@@ -155,11 +164,28 @@ module API
               end
             end
           end
-          @all_hours_raw[Time.parse(e[:from_hour])] = { from_hour: e[:from_hour], to_hour: e[:to_hour], status: e[:status], desc: e[:desc]}
+          @open_hours_and_exceptions[Time.parse(e[:from_hour])] = { from_hour: e[:from_hour], to_hour: e[:to_hour], status: e[:status], desc: e[:desc]}
           # add all available exceptions to the @all_exceptions hash
           @all_exceptions[Time.parse(e[:from_hour])] = e
         end
         # byebug if date == DateTime.parse("2018-12-10")
+
+        tmp_exceptions = @open_hours_and_exceptions.sort
+        first_ex = tmp_exceptions.first
+        last_ex = tmp_exceptions.last
+
+        # since we have multiple exceptions, we take the first OPEN in the list
+        # assuming the time is also open in the list
+
+        if first_ex.second[:from_hour] == "00:00" && last_ex.second[:to_hour] == "23:59"
+          all_open = @open_hours_and_exceptions.select {|h,v| v[:status] == "OPEN"}
+          if all_open.count > 0
+            # we take the first open available for the main open/close entry
+            @from_hour = all_open.first.second[:from_hour]
+            @to_hour = all_open.first.second[:to_hour]
+            # @event_status = all_open.first.second[:status]
+          end
+        end
       end
     end
 
@@ -222,6 +248,8 @@ module API
 
       if first_exception.second.present? && last_exception.second.present? && first_exception.second[:from_hour] == "00:00" && last_exception.second[:status] == "OPEN"
         ['00:14','23:59','00:59'].include?(last_exception.second[:to_hour]) ? false : true
+      elsif first_exception.second.present? && last_exception.second.present? && first_exception.second[:from_hour] == "00:00" && last_exception.second[:status] == "CLOSE"
+        ['23:59'].include?(last_exception.second[:to_hour]) ? true : false
       else
         ['00:14','23:59','00:59'].include?(close_time) ? false : true
       end
