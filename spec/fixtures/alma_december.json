@@ -8,7 +8,17 @@
     "open_all_day": false,
     "closes_at_night": false,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:59"
+      },
+      {
+        "open": "10:00",
+        "close": "23:59"
+      }
+    ]
   },
   "2018-12-02T00:00:00+00:00": {
     "open": "12:00am",
@@ -19,7 +29,17 @@
     "open_all_day": false,
     "closes_at_night": false,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:59"
+      },
+      {
+        "open": "10:00",
+        "close": "23:59"
+      }
+    ]
   },
   "2018-12-03T00:00:00+00:00": {
     "open": "12:00am",
@@ -30,7 +50,13 @@
     "open_all_day": true,
     "closes_at_night": false,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
   },
   "2018-12-04T00:00:00+00:00": {
     "open": "12:00am",
@@ -41,7 +67,13 @@
     "open_all_day": true,
     "closes_at_night": false,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
   },
   "2018-12-05T00:00:00+00:00": {
     "open": "12:00am",
@@ -52,7 +84,13 @@
     "open_all_day": true,
     "closes_at_night": false,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
   },
   "2018-12-06T00:00:00+00:00": {
     "open": "12:00am",
@@ -63,7 +101,13 @@
     "open_all_day": true,
     "closes_at_night": false,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
   },
   "2018-12-07T00:00:00+00:00": {
     "open": "12:00am",
@@ -74,7 +118,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "18:00"
+      }
+    ]
   },
   "2018-12-08T00:00:00+00:00": {
     "open": "",
@@ -85,7 +135,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "Winter Break weekend",
-    "event_status": "CLOSE"
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
   },
   "2018-12-09T00:00:00+00:00": {
     "open": "",
@@ -96,7 +152,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "Winter Break weekend",
-    "event_status": "CLOSE"
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
   },
   "2018-12-10T00:00:00+00:00": {
     "open": " 7:30am",
@@ -107,7 +169,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
   },
   "2018-12-11T00:00:00+00:00": {
     "open": " 7:30am",
@@ -118,7 +186,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
   },
   "2018-12-12T00:00:00+00:00": {
     "open": " 7:30am",
@@ -129,7 +203,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
   },
   "2018-12-13T00:00:00+00:00": {
     "open": " 7:30am",
@@ -140,7 +220,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
   },
   "2018-12-14T00:00:00+00:00": {
     "open": " 7:30am",
@@ -151,7 +237,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
   },
   "2018-12-15T00:00:00+00:00": {
     "open": "",
@@ -162,7 +254,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "Winter Break weekend",
-    "event_status": "CLOSE"
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
   },
   "2018-12-16T00:00:00+00:00": {
     "open": "",
@@ -173,7 +271,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "Winter Break weekend",
-    "event_status": "CLOSE"
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
   },
   "2018-12-17T00:00:00+00:00": {
     "open": " 7:30am",
@@ -184,7 +288,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
   },
   "2018-12-18T00:00:00+00:00": {
     "open": " 7:30am",
@@ -195,7 +305,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
   },
   "2018-12-19T00:00:00+00:00": {
     "open": " 7:30am",
@@ -206,7 +322,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
   },
   "2018-12-20T00:00:00+00:00": {
     "open": " 7:30am",
@@ -217,7 +339,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
   },
   "2018-12-21T00:00:00+00:00": {
     "open": " 7:30am",
@@ -228,7 +356,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
   },
   "2018-12-22T00:00:00+00:00": {
     "open": "",
@@ -239,7 +373,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "Winter Break weekend",
-    "event_status": "CLOSE"
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
   },
   "2018-12-23T00:00:00+00:00": {
     "open": "",
@@ -250,7 +390,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "Winter Break weekend",
-    "event_status": "CLOSE"
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
   },
   "2018-12-24T00:00:00+00:00": {
     "open": " 7:30am",
@@ -261,7 +407,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
   },
   "2018-12-25T00:00:00+00:00": {
     "open": "",
@@ -272,7 +424,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "Christmas Day (observed)",
-    "event_status": "CLOSE"
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
   },
   "2018-12-26T00:00:00+00:00": {
     "open": " 7:30am",
@@ -283,7 +441,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
   },
   "2018-12-27T00:00:00+00:00": {
     "open": " 7:30am",
@@ -294,7 +458,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
   },
   "2018-12-28T00:00:00+00:00": {
     "open": " 7:30am",
@@ -305,7 +475,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
   },
   "2018-12-29T00:00:00+00:00": {
     "open": "",
@@ -316,7 +492,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "Winter Break weekend",
-    "event_status": "CLOSE"
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
   },
   "2018-12-30T00:00:00+00:00": {
     "open": "",
@@ -327,7 +509,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "Winter Break weekend",
-    "event_status": "CLOSE"
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
   },
   "2018-12-31T00:00:00+00:00": {
     "open": " 7:30am",
@@ -338,6 +526,12 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
   }
 }

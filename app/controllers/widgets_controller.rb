@@ -42,14 +42,14 @@ class WidgetsController < ApplicationController
 
   def alma_request
     dates = [Date.today.strftime("%Y-%m-%d"), (Date.today+6.days).strftime("%Y-%m-%d")]
-    alma = Alma.new(dates.first, dates.last)
-    API::HoursXmlToJsonParser.call(alma.xml_document, dates)
+    alma = AlmaSpecialHours.new
+    API::OpenAndSpecialHoursXmlToJsonParser.call(alma.xml_document, dates)
   end
 
   def alma_todays_hours_request
     dates = [Date.today.strftime("%Y-%m-%d"), Date.today.strftime("%Y-%m-%d")]
-    alma = Alma.new(dates.first, dates.last)
-    API::HoursXmlToJsonParser.call(alma.xml_document, dates)
+    alma = AlmaSpecialHours.new
+    API::OpenAndSpecialHoursXmlToJsonParser.call(alma.xml_document, dates)
   end
 
   def alma_special_hours_request

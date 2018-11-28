@@ -8,7 +8,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ]
   },
   "2018-11-12T00:00:00+00:00": {
     "open": "",
@@ -19,7 +25,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "Veterans Day",
-    "event_status": "CLOSE"
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
   },
   "2018-11-13T00:00:00+00:00": {
     "open": " 7:30am",
@@ -30,7 +42,13 @@
     "open_all_day": false,
     "closes_at_night": false,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "23:59"
+      }
+    ]
   },
   "2018-11-14T00:00:00+00:00": {
     "open": "12:00am",
@@ -41,7 +59,13 @@
     "open_all_day": true,
     "closes_at_night": false,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
   },
   "2018-11-15T00:00:00+00:00": {
     "open": "12:00am",
@@ -52,7 +76,13 @@
     "open_all_day": true,
     "closes_at_night": false,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
   },
   "2018-11-16T00:00:00+00:00": {
     "open": "12:00am",
@@ -63,7 +93,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "22:00"
+      }
+    ]
   },
   "2018-11-17T00:00:00+00:00": {
     "open": "10:00am",
@@ -74,7 +110,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ]
   },
   "2018-11-18T00:00:00+00:00": {
     "open": "10:00am",
@@ -85,7 +127,13 @@
     "open_all_day": false,
     "closes_at_night": false,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "23:59"
+      }
+    ]
   },
   "2018-11-19T00:00:00+00:00": {
     "open": "12:00am",
@@ -96,7 +144,13 @@
     "open_all_day": true,
     "closes_at_night": false,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
   },
   "2018-11-20T00:00:00+00:00": {
     "open": "12:00am",
@@ -107,7 +161,13 @@
     "open_all_day": true,
     "closes_at_night": false,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
   },
   "2018-11-21T00:00:00+00:00": {
     "open": "12:00am",
@@ -118,7 +178,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "22:00"
+      }
+    ]
   },
   "2018-11-22T00:00:00+00:00": {
     "open": "",
@@ -129,7 +195,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "Thanksgiving holiday",
-    "event_status": "CLOSE"
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
   },
   "2018-11-23T00:00:00+00:00": {
     "open": "",
@@ -140,7 +212,13 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "Thanksgiving holiday",
-    "event_status": "CLOSE"
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
   },
   "2018-11-24T00:00:00+00:00": {
     "open": "10:00am",
@@ -151,6 +229,12 @@
     "open_all_day": false,
     "closes_at_night": true,
     "event_desc": "",
-    "event_status": ""
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ]
   }
 }
