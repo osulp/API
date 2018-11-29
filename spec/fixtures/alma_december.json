@@ -1,0 +1,537 @@
+{
+  "2018-12-01T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:59am",
+    "string_date": "Sat, Dec 1, 2018",
+    "sortable_date": "2018-12-01",
+    "formatted_hours": "12:00am - 2:59am, 10:00am - 11:59pm",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:59"
+      },
+      {
+        "open": "10:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2018-12-02T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:59am",
+    "string_date": "Sun, Dec 2, 2018",
+    "sortable_date": "2018-12-02",
+    "formatted_hours": "12:00am - 2:59am, 10:00am - 11:59pm",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:59"
+      },
+      {
+        "open": "10:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2018-12-03T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Mon, Dec 3, 2018",
+    "sortable_date": "2018-12-03",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2018-12-04T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Tue, Dec 4, 2018",
+    "sortable_date": "2018-12-04",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2018-12-05T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Wed, Dec 5, 2018",
+    "sortable_date": "2018-12-05",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2018-12-06T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Thu, Dec 6, 2018",
+    "sortable_date": "2018-12-06",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2018-12-07T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "6:00pm",
+    "string_date": "Fri, Dec 7, 2018",
+    "sortable_date": "2018-12-07",
+    "formatted_hours": "12:00am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "18:00"
+      }
+    ]
+  },
+  "2018-12-08T00:00:00+00:00": {
+    "open": "",
+    "close": "",
+    "string_date": "Sat, Dec 8, 2018",
+    "sortable_date": "2018-12-08",
+    "formatted_hours": "Closed",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "Winter Break weekend",
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
+  },
+  "2018-12-09T00:00:00+00:00": {
+    "open": "",
+    "close": "",
+    "string_date": "Sun, Dec 9, 2018",
+    "sortable_date": "2018-12-09",
+    "formatted_hours": "Closed",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "Winter Break weekend",
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
+  },
+  "2018-12-10T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "6:00pm",
+    "string_date": "Mon, Dec 10, 2018",
+    "sortable_date": "2018-12-10",
+    "formatted_hours": "7:30am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
+  },
+  "2018-12-11T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "6:00pm",
+    "string_date": "Tue, Dec 11, 2018",
+    "sortable_date": "2018-12-11",
+    "formatted_hours": "7:30am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
+  },
+  "2018-12-12T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "6:00pm",
+    "string_date": "Wed, Dec 12, 2018",
+    "sortable_date": "2018-12-12",
+    "formatted_hours": "7:30am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
+  },
+  "2018-12-13T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "6:00pm",
+    "string_date": "Thu, Dec 13, 2018",
+    "sortable_date": "2018-12-13",
+    "formatted_hours": "7:30am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
+  },
+  "2018-12-14T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "6:00pm",
+    "string_date": "Fri, Dec 14, 2018",
+    "sortable_date": "2018-12-14",
+    "formatted_hours": "7:30am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
+  },
+  "2018-12-15T00:00:00+00:00": {
+    "open": "",
+    "close": "",
+    "string_date": "Sat, Dec 15, 2018",
+    "sortable_date": "2018-12-15",
+    "formatted_hours": "Closed",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "Winter Break weekend",
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
+  },
+  "2018-12-16T00:00:00+00:00": {
+    "open": "",
+    "close": "",
+    "string_date": "Sun, Dec 16, 2018",
+    "sortable_date": "2018-12-16",
+    "formatted_hours": "Closed",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "Winter Break weekend",
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
+  },
+  "2018-12-17T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "6:00pm",
+    "string_date": "Mon, Dec 17, 2018",
+    "sortable_date": "2018-12-17",
+    "formatted_hours": "7:30am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
+  },
+  "2018-12-18T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "6:00pm",
+    "string_date": "Tue, Dec 18, 2018",
+    "sortable_date": "2018-12-18",
+    "formatted_hours": "7:30am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
+  },
+  "2018-12-19T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "6:00pm",
+    "string_date": "Wed, Dec 19, 2018",
+    "sortable_date": "2018-12-19",
+    "formatted_hours": "7:30am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
+  },
+  "2018-12-20T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "6:00pm",
+    "string_date": "Thu, Dec 20, 2018",
+    "sortable_date": "2018-12-20",
+    "formatted_hours": "7:30am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
+  },
+  "2018-12-21T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "6:00pm",
+    "string_date": "Fri, Dec 21, 2018",
+    "sortable_date": "2018-12-21",
+    "formatted_hours": "7:30am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
+  },
+  "2018-12-22T00:00:00+00:00": {
+    "open": "",
+    "close": "",
+    "string_date": "Sat, Dec 22, 2018",
+    "sortable_date": "2018-12-22",
+    "formatted_hours": "Closed",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "Winter Break weekend",
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
+  },
+  "2018-12-23T00:00:00+00:00": {
+    "open": "",
+    "close": "",
+    "string_date": "Sun, Dec 23, 2018",
+    "sortable_date": "2018-12-23",
+    "formatted_hours": "Closed",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "Winter Break weekend",
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
+  },
+  "2018-12-24T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "6:00pm",
+    "string_date": "Mon, Dec 24, 2018",
+    "sortable_date": "2018-12-24",
+    "formatted_hours": "7:30am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
+  },
+  "2018-12-25T00:00:00+00:00": {
+    "open": "",
+    "close": "",
+    "string_date": "Tue, Dec 25, 2018",
+    "sortable_date": "2018-12-25",
+    "formatted_hours": "Closed",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "Christmas Day (observed)",
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
+  },
+  "2018-12-26T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "6:00pm",
+    "string_date": "Wed, Dec 26, 2018",
+    "sortable_date": "2018-12-26",
+    "formatted_hours": "7:30am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
+  },
+  "2018-12-27T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "6:00pm",
+    "string_date": "Thu, Dec 27, 2018",
+    "sortable_date": "2018-12-27",
+    "formatted_hours": "7:30am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
+  },
+  "2018-12-28T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "6:00pm",
+    "string_date": "Fri, Dec 28, 2018",
+    "sortable_date": "2018-12-28",
+    "formatted_hours": "7:30am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
+  },
+  "2018-12-29T00:00:00+00:00": {
+    "open": "",
+    "close": "",
+    "string_date": "Sat, Dec 29, 2018",
+    "sortable_date": "2018-12-29",
+    "formatted_hours": "Closed",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "Winter Break weekend",
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
+  },
+  "2018-12-30T00:00:00+00:00": {
+    "open": "",
+    "close": "",
+    "string_date": "Sun, Dec 30, 2018",
+    "sortable_date": "2018-12-30",
+    "formatted_hours": "Closed",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "Winter Break weekend",
+    "event_status": "CLOSE",
+    "all_open_hours": [
+      {
+        "open": "",
+        "close": ""
+      }
+    ]
+  },
+  "2018-12-31T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "6:00pm",
+    "string_date": "Mon, Dec 31, 2018",
+    "sortable_date": "2018-12-31",
+    "formatted_hours": "7:30am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
+  }
+}

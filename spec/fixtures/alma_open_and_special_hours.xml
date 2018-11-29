@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<open_hours>
+  <open_hour>
+    <type desc="Standard opening hours">WEEK</type>
+    <inherited>false</inherited>
+    <desc>Wednesday</desc>
+    <from_date>2014-08-14Z</from_date>
+    <to_date>2019-08-14Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Wednesday">WEDNESDAY</day_of_week>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Standard opening hours">WEEK</type>
+    <inherited>false</inherited>
+    <desc>Thursday</desc>
+    <from_date>2014-08-14Z</from_date>
+    <to_date>2019-08-14Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Thursday">THURSDAY</day_of_week>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Standard opening hours">WEEK</type>
+    <inherited>false</inherited>
+    <desc>Friday</desc>
+    <from_date>2014-08-14Z</from_date>
+    <to_date>2019-08-14Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>22:00</to_hour>
+    <day_of_week desc="Friday">FRIDAY</day_of_week>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Standard opening hours">WEEK</type>
+    <inherited>false</inherited>
+    <desc>Open 00:00-23:59</desc>
+    <from_date>2017-01-06Z</from_date>
+    <to_date>2020-01-06Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Monday">MONDAY</day_of_week>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Standard opening hours">WEEK</type>
+    <inherited>false</inherited>
+    <desc>Open 00:00-23:59</desc>
+    <from_date>2017-01-06Z</from_date>
+    <to_date>2020-01-06Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Tuesday">TUESDAY</day_of_week>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Dead Week extended hours (Friday)</desc>
+    <from_date>2018-06-08Z</from_date>
+    <to_date>2018-06-08Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Friday">FRIDAY</day_of_week>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Dead Week extended hours (Saturday and Sunday after midnight)</desc>
+    <from_date>2018-06-09Z</from_date>
+    <to_date>2018-06-10Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>02:59</to_hour>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Dead Week extended hours (Saturday and Sunday morning)</desc>
+    <from_date>2018-06-09Z</from_date>
+    <to_date>2018-06-10Z</to_date>
+    <from_hour>03:00</from_hour>
+    <to_hour>10:00</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Dead Week extended hours (Saturday and Sunday)</desc>
+    <from_date>2018-06-09Z</from_date>
+    <to_date>2018-06-10Z</to_date>
+    <from_hour>10:01</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Friday evening last day of term</desc>
+    <from_date>2018-06-15Z</from_date>
+    <to_date>2018-06-15Z</to_date>
+    <from_hour>18:00</from_hour>
+    <to_hour>22:00</to_hour>
+    <day_of_week desc="Friday">FRIDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Commencement</desc>
+    <from_date>2018-06-16Z</from_date>
+    <to_date>2018-06-16Z</to_date>
+    <from_hour>13:00</from_hour>
+    <to_hour>17:59</to_hour>
+    <day_of_week desc="Saturday">SATURDAY</day_of_week>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Summer Session Saturday evening</desc>
+    <from_date>2018-06-16Z</from_date>
+    <to_date>2018-09-04Z</to_date>
+    <from_hour>18:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Saturday">SATURDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Summer Session Sunday morning</desc>
+    <from_date>2018-06-17Z</from_date>
+    <to_date>2018-09-04Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>13:00</to_hour>
+    <day_of_week desc="Sunday">SUNDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Summer intersession Sunday evening</desc>
+    <from_date>2018-06-17Z</from_date>
+    <to_date>2018-06-17Z</to_date>
+    <from_hour>18:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Sunday">SUNDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Summer Session Monday morning</desc>
+    <from_date>2018-06-18Z</from_date>
+    <to_date>2018-09-03Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <day_of_week desc="Monday">MONDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Summer Session Monday evening</desc>
+    <from_date>2018-06-18Z</from_date>
+    <to_date>2018-09-03Z</to_date>
+    <from_hour>21:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Monday">MONDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Summer Session Tuesday morning</desc>
+    <from_date>2018-06-19Z</from_date>
+    <to_date>2018-09-04Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <day_of_week desc="Tuesday">TUESDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Summer Session Tuesday evening</desc>
+    <from_date>2018-06-19Z</from_date>
+    <to_date>2018-09-04Z</to_date>
+    <from_hour>21:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Tuesday">TUESDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Summer Session Wednesday morning</desc>
+    <from_date>2018-06-20Z</from_date>
+    <to_date>2018-09-05Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <day_of_week desc="Wednesday">WEDNESDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Summer Session Wednesday evening</desc>
+    <from_date>2018-06-20Z</from_date>
+    <to_date>2018-09-05Z</to_date>
+    <from_hour>21:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Wednesday">WEDNESDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Summer Session Thursday morning</desc>
+    <from_date>2018-06-21Z</from_date>
+    <to_date>2018-09-06Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <day_of_week desc="Thursday">THURSDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Summer Session Thursday evening</desc>
+    <from_date>2018-06-21Z</from_date>
+    <to_date>2018-09-06Z</to_date>
+    <from_hour>21:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Thursday">THURSDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Summer Session Friday morning</desc>
+    <from_date>2018-06-22Z</from_date>
+    <to_date>2018-09-07Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <day_of_week desc="Friday">FRIDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Summer Session Friday evening</desc>
+    <from_date>2018-06-22Z</from_date>
+    <to_date>2018-09-07Z</to_date>
+    <from_hour>18:00</from_hour>
+    <to_hour>22:00</to_hour>
+    <day_of_week desc="Friday">FRIDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Summer Session Saturday morning</desc>
+    <from_date>2018-06-23Z</from_date>
+    <to_date>2018-09-01Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>13:00</to_hour>
+    <day_of_week desc="Saturday">SATURDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Summer Session Sunday evening</desc>
+    <from_date>2018-06-24Z</from_date>
+    <to_date>2018-09-02Z</to_date>
+    <from_hour>21:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Sunday">SUNDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>true</inherited>
+    <desc>Independence Day</desc>
+    <from_date>2018-07-04Z</from_date>
+    <to_date>2018-07-04Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Wednesday">WEDNESDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Standard opening hours">WEEK</type>
+    <inherited>false</inherited>
+    <desc>Open 10:00-22:00</desc>
+    <from_date>2018-07-19Z</from_date>
+    <to_date>2021-07-19Z</to_date>
+    <from_hour>10:00</from_hour>
+    <to_hour>22:00</to_hour>
+    <day_of_week desc="Saturday">SATURDAY</day_of_week>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Standard opening hours">WEEK</type>
+    <inherited>false</inherited>
+    <desc>Open 10:00-23:59</desc>
+    <from_date>2018-07-19Z</from_date>
+    <to_date>2021-07-19Z</to_date>
+    <from_hour>10:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Sunday">SUNDAY</day_of_week>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>true</inherited>
+    <desc>Labor Day</desc>
+    <from_date>2018-09-03Z</from_date>
+    <to_date>2018-09-03Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Monday">MONDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Fall Break weekend</desc>
+    <from_date>2018-09-08Z</from_date>
+    <to_date>2018-09-09Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>In-service Day</desc>
+    <from_date>2018-09-10Z</from_date>
+    <to_date>2018-09-10Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Fall Break weekday morning</desc>
+    <from_date>2018-09-11Z</from_date>
+    <to_date>2018-09-14Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Fall Break weekday evening</desc>
+    <from_date>2018-09-11Z</from_date>
+    <to_date>2018-09-14Z</to_date>
+    <from_hour>18:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Fall Break weekend</desc>
+    <from_date>2018-09-15Z</from_date>
+    <to_date>2018-09-16Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Fall Break weekday morning</desc>
+    <from_date>2018-09-17Z</from_date>
+    <to_date>2018-09-21Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Fall Break weekday evening</desc>
+    <from_date>2018-09-17Z</from_date>
+    <to_date>2018-09-18Z</to_date>
+    <from_hour>18:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Evenings beginning of Fall Term</desc>
+    <from_date>2018-09-19Z</from_date>
+    <to_date>2018-09-21Z</to_date>
+    <from_hour>22:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Sunday evening before holiday</desc>
+    <from_date>2018-11-11Z</from_date>
+    <to_date>2018-11-11Z</to_date>
+    <from_hour>22:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Sunday">SUNDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>true</inherited>
+    <desc>Veterans Day</desc>
+    <from_date>2018-11-12Z</from_date>
+    <to_date>2018-11-12Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Tuesday morning after holiday</desc>
+    <from_date>2018-11-13Z</from_date>
+    <to_date>2018-11-13Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <day_of_week desc="Tuesday">TUESDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Wednesday evening before holiday</desc>
+    <from_date>2018-11-21Z</from_date>
+    <to_date>2018-11-21Z</to_date>
+    <from_hour>22:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Wednesday">WEDNESDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>true</inherited>
+    <desc>Thanksgiving holiday</desc>
+    <from_date>2018-11-22Z</from_date>
+    <to_date>2018-11-23Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Dead Week extended hours (Friday)</desc>
+    <from_date>2018-11-30Z</from_date>
+    <to_date>2018-11-30Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Friday">FRIDAY</day_of_week>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Dead Week extended hours (Saturday and Sunday after midnight)</desc>
+    <from_date>2018-12-01Z</from_date>
+    <to_date>2018-12-02Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>02:59</to_hour>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Dead Week extended hours (Saturday and Sunday morning)</desc>
+    <from_date>2018-12-01Z</from_date>
+    <to_date>2018-12-02Z</to_date>
+    <from_hour>03:00</from_hour>
+    <to_hour>09:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Dead Week extended hours (Saturday and Sunday)</desc>
+    <from_date>2018-12-01Z</from_date>
+    <to_date>2018-12-02Z</to_date>
+    <from_hour>10:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Event">EVENT</type>
+    <inherited>true</inherited>
+    <desc>End of Term</desc>
+    <from_date>2018-12-07Z</from_date>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Friday evening last day of term</desc>
+    <from_date>2018-12-07Z</from_date>
+    <to_date>2018-12-07Z</to_date>
+    <from_hour>18:00</from_hour>
+    <to_hour>22:00</to_hour>
+    <day_of_week desc="Friday">FRIDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Winter Break weekend</desc>
+    <from_date>2018-12-08Z</from_date>
+    <to_date>2018-12-09Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Winter Break weekday morning</desc>
+    <from_date>2018-12-10Z</from_date>
+    <to_date>2018-12-14Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Winter Break weekday evening</desc>
+    <from_date>2018-12-10Z</from_date>
+    <to_date>2018-12-14Z</to_date>
+    <from_hour>18:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Winter Break weekend</desc>
+    <from_date>2018-12-15Z</from_date>
+    <to_date>2018-12-16Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Winter Break weekday morning</desc>
+    <from_date>2018-12-17Z</from_date>
+    <to_date>2018-12-21Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Winter Break weekday evening</desc>
+    <from_date>2018-12-17Z</from_date>
+    <to_date>2018-12-21Z</to_date>
+    <from_hour>18:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Winter Break weekend</desc>
+    <from_date>2018-12-22Z</from_date>
+    <to_date>2018-12-23Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Christmas Eve morning</desc>
+    <from_date>2018-12-24Z</from_date>
+    <to_date>2018-12-24Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Christmas Eve evening</desc>
+    <from_date>2018-12-24Z</from_date>
+    <to_date>2018-12-24Z</to_date>
+    <from_hour>18:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>true</inherited>
+    <desc>Christmas Day (observed)</desc>
+    <from_date>2018-12-25Z</from_date>
+    <to_date>2018-12-25Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Winter Break weekday morning</desc>
+    <from_date>2018-12-26Z</from_date>
+    <to_date>2018-12-28Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Winter Break weekday evening</desc>
+    <from_date>2018-12-26Z</from_date>
+    <to_date>2018-12-28Z</to_date>
+    <from_hour>18:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Winter Break weekend</desc>
+    <from_date>2018-12-29Z</from_date>
+    <to_date>2018-12-30Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>New Year's Eve morning</desc>
+    <from_date>2018-12-31Z</from_date>
+    <to_date>2018-12-31Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>New Year's Eve evening</desc>
+    <from_date>2018-12-31Z</from_date>
+    <to_date>2018-12-31Z</to_date>
+    <from_hour>18:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>true</inherited>
+    <desc>New Year's Day (observed)</desc>
+    <from_date>2019-01-01Z</from_date>
+    <to_date>2019-01-01Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Tuesday">TUESDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Winter Break weekday morning</desc>
+    <from_date>2019-01-02Z</from_date>
+    <to_date>2019-01-04Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Winter Break weekday evening</desc>
+    <from_date>2019-01-02Z</from_date>
+    <to_date>2019-01-04Z</to_date>
+    <from_hour>18:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Winter Break weekend</desc>
+    <from_date>2019-01-05Z</from_date>
+    <to_date>2019-01-05Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Saturday">SATURDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Sunday evening before term</desc>
+    <from_date>2019-01-06Z</from_date>
+    <to_date>2019-01-06Z</to_date>
+    <from_hour>22:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Sunday">SUNDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>First day of term opening</desc>
+    <from_date>2019-01-07Z</from_date>
+    <to_date>2019-01-07Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <day_of_week desc="Monday">MONDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Event">EVENT</type>
+    <inherited>true</inherited>
+    <desc>End of High School Semester</desc>
+    <from_date>2019-01-18Z</from_date>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Sunday evening before holiday</desc>
+    <from_date>2019-01-20Z</from_date>
+    <to_date>2019-01-20Z</to_date>
+    <from_hour>22:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Sunday">SUNDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>true</inherited>
+    <desc>Martin Luther King Jr. Day</desc>
+    <from_date>2019-01-21Z</from_date>
+    <to_date>2019-01-21Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Monday">MONDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Tuesday morning after holiday</desc>
+    <from_date>2019-01-22Z</from_date>
+    <to_date>2019-01-22Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <day_of_week desc="Tuesday">TUESDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Event">EVENT</type>
+    <inherited>true</inherited>
+    <desc>End of High School Quarter</desc>
+    <from_date>2019-01-24Z</from_date>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Dead Week extended hours (Friday)</desc>
+    <from_date>2019-03-15Z</from_date>
+    <to_date>2019-03-15Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Friday">FRIDAY</day_of_week>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Dead Week extended hours (Saturday and Sunday after midnight)</desc>
+    <from_date>2019-03-16Z</from_date>
+    <to_date>2019-03-17Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>02:59</to_hour>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Dead Week extended hours (Saturday and Sunday morning)</desc>
+    <from_date>2019-03-16Z</from_date>
+    <to_date>2019-03-17Z</to_date>
+    <from_hour>03:00</from_hour>
+    <to_hour>10:00</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Dead Week extended hours (Saturday and Sunday)</desc>
+    <from_date>2019-03-16Z</from_date>
+    <to_date>2019-03-17Z</to_date>
+    <from_hour>10:01</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Open">OPEN</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Friday evening last day of term</desc>
+    <from_date>2019-03-22Z</from_date>
+    <to_date>2019-03-22Z</to_date>
+    <from_hour>18:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Friday">FRIDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Spring Break weekend morning</desc>
+    <from_date>2019-03-23Z</from_date>
+    <to_date>2019-03-24Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>13:00</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Spring Break evening</desc>
+    <from_date>2019-03-23Z</from_date>
+    <to_date>2019-03-30Z</to_date>
+    <from_hour>18:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Spring Break weekday morning</desc>
+    <from_date>2019-03-25Z</from_date>
+    <to_date>2019-03-29Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Spring Break weekend morning</desc>
+    <from_date>2019-03-30Z</from_date>
+    <to_date>2019-03-31Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>13:00</to_hour>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Sunday evening before term</desc>
+    <from_date>2019-03-31Z</from_date>
+    <to_date>2019-03-31Z</to_date>
+    <from_hour>22:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Sunday">SUNDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Monday morning first day of term</desc>
+    <from_date>2019-04-01Z</from_date>
+    <to_date>2019-04-01Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <day_of_week desc="Monday">MONDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Sunday evening before holiday</desc>
+    <from_date>2019-05-26Z</from_date>
+    <to_date>2019-05-26Z</to_date>
+    <from_hour>22:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Sunday">SUNDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>true</inherited>
+    <desc>Memorial Day</desc>
+    <from_date>2019-05-27Z</from_date>
+    <to_date>2019-05-27Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>23:59</to_hour>
+    <day_of_week desc="Monday">MONDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+  <open_hour>
+    <type desc="Exception">EXCEPTION</type>
+    <inherited>false</inherited>
+    <desc>Tuesday morning after holiday</desc>
+    <from_date>2019-05-28Z</from_date>
+    <to_date>2019-05-28Z</to_date>
+    <from_hour>00:00</from_hour>
+    <to_hour>07:30</to_hour>
+    <day_of_week desc="Tuesday">TUESDAY</day_of_week>
+    <status desc="Closed">CLOSE</status>
+  </open_hour>
+</open_hours>

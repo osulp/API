@@ -3,8 +3,8 @@ class ApiController < ApplicationController
 
   def hours
     dates = @dates.blank? ?  [Date.today.strftime("%Y-%m-%d"), Date.today.strftime("%Y-%m-%d")] : @dates.sort
-    alma = Alma.new(dates.first, dates.last)
-    @hours = API::HoursXmlToJsonParser.call(alma.xml_document, dates)
+    alma = AlmaSpecialHours.new
+    @hours = API::OpenAndSpecialHoursXmlToJsonParser.call(alma.xml_document, dates)
 
     render json: @hours
   end
