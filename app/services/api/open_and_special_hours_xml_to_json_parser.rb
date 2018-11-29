@@ -122,8 +122,8 @@ module API
       override_hours(date)
 
       output_data = {
-        open:  @from_hour.present? ? Time.parse(@from_hour).strftime("%l:%M%P") : "",
-        close: @to_hour.present? ? Time.parse(@to_hour).strftime("%l:%M%P") : "",
+        open:  @from_hour.present? ? Time.parse(@from_hour).strftime("%-l:%M%P") : "",
+        close: @to_hour.present? ? Time.parse(@to_hour).strftime("%-l:%M%P") : "",
         string_date: date.strftime("%a, %b %-d, %Y"),
         sortable_date: date.strftime("%Y-%m-%d"),
         formatted_hours: all_formatted_hours,
@@ -283,7 +283,7 @@ module API
 
     def formatted_hours(open_time, close_time)
       if (close_time == "00:14")
-        "#{Time.parse(open_time).strftime("%l:%M%P")} - No Closing"
+        "#{Time.parse(open_time).strftime("%-l:%M%P")} - No Closing"
       elsif (open_time == "00:14")
         "Closes at #{close_time}"
       elsif (open_time == "00:00" && close_time == "23:59")
@@ -291,7 +291,7 @@ module API
       elsif (open_time.eql? close_time)
         "Closed"
       else
-        "#{Time.parse(open_time).strftime("%l:%M%P")} -#{Time.parse(close_time).strftime("%l:%M%P")}"
+        "#{Time.parse(open_time).strftime("%-l:%M%P")} - #{Time.parse(close_time).strftime("%-l:%M%P")}"
       end
     end
 
