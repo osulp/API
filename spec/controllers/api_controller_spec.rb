@@ -11,8 +11,8 @@ describe ApiController, type: :controller do
     let(:url) { "#{ENV['ALMA_OPEN_HOURS_URL']}?apikey=#{ENV['ALMA_API_KEY']}&from=#{date_from}&to=#{date_to}" }
     let(:open_and_special_hours_url) { "#{ENV['ALMA_SPECIAL_HOURS_URL']}?apikey=#{ENV['ALMA_API_KEY']}&scope=#{ENV['ALMA_SPECIAL_HOURS_SCOPE']}" }
     let(:xml) { File.read("spec/fixtures/alma_open_hours.xml") }
-    let(:date_from) { Date.today.strftime("%Y-%m-%d") }
-    let(:date_to) { Date.today.strftime("%Y-%m-%d") }
+    let(:date_from) { Time.zone.today.strftime("%Y-%m-%d") }
+    let(:date_to) { Time.zone.today.strftime("%Y-%m-%d") }
     let(:dates) { [date_from, date_to] }
     let(:cached_minutes) { "1" }
 
