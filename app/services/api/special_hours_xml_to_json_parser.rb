@@ -48,7 +48,7 @@ module API
     # - current date is within range [from_date, to_date]
     def self.upcoming_date?(from_date, to_date)
       date_range = DateTime.parse(from_date)..DateTime.parse(to_date)
-      date_range === Date.today.beginning_of_day || date_range.first.future?
+      date_range === Time.zone.today.beginning_of_day || date_range.first.future?
     end
 
     def self.get_formatted_dates(day)
