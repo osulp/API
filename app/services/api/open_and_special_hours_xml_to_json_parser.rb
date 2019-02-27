@@ -202,7 +202,7 @@ module API
         # partially closed, we close in the morning (i.e. inclement weather)
         closure_from_hour = Time.parse(first_exception[:from_hour]).strftime("%-l:%M%P")
         closure_to_hour = Time.parse(first_exception[:to_hour]).strftime("%-l:%M%P")
-        @closure_info = "#{first_exception[:desc]}: #{closure_from_hour} - #{closure_to_hour}, #{formatted_hours(first_exception[:to_hour], @to_hour)}"
+        @closure_info = "#{first_exception[:desc]}: #{closure_from_hour} - #{closure_to_hour}, Open: #{formatted_hours(first_exception[:to_hour], @to_hour)}"
       end
     end
 
