@@ -1,0 +1,478 @@
+{
+  "2019-02-01T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "10:00pm",
+    "string_date": "Fri, Feb 1, 2019",
+    "sortable_date": "2019-02-01",
+    "formatted_hours": "12:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2019-02-02T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "10:00pm",
+    "string_date": "Sat, Feb 2, 2019",
+    "sortable_date": "2019-02-02",
+    "formatted_hours": "10:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2019-02-03T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "11:59pm",
+    "string_date": "Sun, Feb 3, 2019",
+    "sortable_date": "2019-02-03",
+    "formatted_hours": "10:00am - No Closing",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-04T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Mon, Feb 4, 2019",
+    "sortable_date": "2019-02-04",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-05T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Tue, Feb 5, 2019",
+    "sortable_date": "2019-02-05",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-06T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Wed, Feb 6, 2019",
+    "sortable_date": "2019-02-06",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-07T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Thu, Feb 7, 2019",
+    "sortable_date": "2019-02-07",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-08T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "10:00pm",
+    "string_date": "Fri, Feb 8, 2019",
+    "sortable_date": "2019-02-08",
+    "formatted_hours": "12:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2019-02-09T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "10:00pm",
+    "string_date": "Sat, Feb 9, 2019",
+    "sortable_date": "2019-02-09",
+    "formatted_hours": "10:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2019-02-10T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "11:59pm",
+    "string_date": "Sun, Feb 10, 2019",
+    "sortable_date": "2019-02-10",
+    "formatted_hours": "10:00am - No Closing",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-11T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Mon, Feb 11, 2019",
+    "sortable_date": "2019-02-11",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-12T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Tue, Feb 12, 2019",
+    "sortable_date": "2019-02-12",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-13T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Wed, Feb 13, 2019",
+    "sortable_date": "2019-02-13",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-14T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Thu, Feb 14, 2019",
+    "sortable_date": "2019-02-14",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-15T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "10:00pm",
+    "string_date": "Fri, Feb 15, 2019",
+    "sortable_date": "2019-02-15",
+    "formatted_hours": "12:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2019-02-16T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "10:00pm",
+    "string_date": "Sat, Feb 16, 2019",
+    "sortable_date": "2019-02-16",
+    "formatted_hours": "10:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2019-02-17T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "11:59pm",
+    "string_date": "Sun, Feb 17, 2019",
+    "sortable_date": "2019-02-17",
+    "formatted_hours": "10:00am - No Closing",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-18T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Mon, Feb 18, 2019",
+    "sortable_date": "2019-02-18",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-19T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Tue, Feb 19, 2019",
+    "sortable_date": "2019-02-19",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-20T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Wed, Feb 20, 2019",
+    "sortable_date": "2019-02-20",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-21T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Thu, Feb 21, 2019",
+    "sortable_date": "2019-02-21",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-22T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "10:00pm",
+    "string_date": "Fri, Feb 22, 2019",
+    "sortable_date": "2019-02-22",
+    "formatted_hours": "12:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2019-02-23T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "10:00pm",
+    "string_date": "Sat, Feb 23, 2019",
+    "sortable_date": "2019-02-23",
+    "formatted_hours": "10:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2019-02-24T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "11:59pm",
+    "string_date": "Sun, Feb 24, 2019",
+    "sortable_date": "2019-02-24",
+    "formatted_hours": "10:00am - No Closing",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-25T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Mon, Feb 25, 2019",
+    "sortable_date": "2019-02-25",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-26T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Tue, Feb 26, 2019",
+    "sortable_date": "2019-02-26",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-27T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Wed, Feb 27, 2019",
+    "sortable_date": "2019-02-27",
+    "formatted_hours": "Snow Closure: 5:30am - 12:00pm, Open: 12:00pm - No Closing",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-02-28T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Thu, Feb 28, 2019",
+    "sortable_date": "2019-02-28",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  }
+}

@@ -118,7 +118,7 @@ module API
       @event_status = ""
       @all_exceptions = {}
       @open_hours_and_exceptions_override = {}
-
+      @closure_info = nil
       override_hours(date)
 
       output_data = {
@@ -180,6 +180,7 @@ module API
     end
 
     def override_from_first_exception(first_exception)
+      #TODO: Refactor overrides to a class. I think the logic for overrides like this method should go to a class or service to handle all special cases.
       # if closed all day for date, then override @from_hour, @to_hour, etc
       if closed_all_day?(first_exception)
         @from_hour = ''
@@ -197,6 +198,11 @@ module API
         @to_hour = first_exception[:to_hour]
         @event_desc = ""
         @event_status = ""
+      elsif first_exception[:status] == "CLOSE" && first_exception[:desc].present? && open_all_day?(@from_hour, @to_hour)
+        # partially closed, we close in the morning (i.e. inclement weather)
+        closure_from_hour = Time.parse(first_exception[:from_hour]).strftime("%-l:%M%P")
+        closure_to_hour = Time.parse(first_exception[:to_hour]).strftime("%-l:%M%P")
+        @closure_info = "#{first_exception[:desc]}: #{closure_from_hour} - #{closure_to_hour}, Open: #{formatted_hours(first_exception[:to_hour], @to_hour)}"
       end
     end
 
@@ -286,6 +292,8 @@ module API
         "#{Time.parse(open_time).strftime("%-l:%M%P")} - No Closing"
       elsif (open_time == "00:14")
         "Closes at #{close_time}"
+      elsif (open_time == "00:00" && close_time == "23:59" && @closure_info.present?)
+        @closure_info
       elsif (open_time == "00:00" && close_time == "23:59")
         "Open 24 Hours"
       elsif (open_time.eql? close_time)
@@ -300,7 +308,7 @@ module API
     end
 
     def open_all_day?(open_time, close_time)
-      (open_time == "00:00" && close_time == "23:59") ? true : false
+      (open_time == "00:00" && close_time == "23:59" && @closure_info.blank?) ? true : false
     end
 
     def closes_at_night?(close_time, date)

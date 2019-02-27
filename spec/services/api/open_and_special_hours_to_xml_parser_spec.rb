@@ -36,5 +36,21 @@ describe API::OpenAndSpecialHoursXmlToJsonParser do
         end
       end
     end
+
+    context "outputs JSON in a valid format for the month of february 2019-02-01 to 2019-02-28" do
+      let(:api_output_json) { File.read("spec/fixtures/alma_february_2019.json") }
+      let(:xml) { File.read("spec/fixtures/alma_open_and_special_hours_2019.xml") }
+      let(:expected_json) { JSON.parse(api_output_json) }
+      let(:dates) {["2019-02-01", "2019-02-28"]}
+
+      FEB_TEST_DATES = (DateTime.parse("2019-02-01")..DateTime.parse("2019-02-28")).to_a.map {|d| d.strftime("%Y-%m-%d") }
+      FEB_TEST_DATES.each do |date|
+        it "outputs JSON in a valid format for #{date}" do
+          date_val = DateTime.parse(date).to_s
+          expected_date_json = expected_json[date_val]
+          expect(JSON.parse(service.call(xml,dates))[date_val]).to eq expected_date_json
+        end
+      end
+    end
   end
 end
