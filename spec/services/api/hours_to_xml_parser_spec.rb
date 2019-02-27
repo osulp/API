@@ -26,7 +26,6 @@ describe API::HoursXmlToJsonParser do
       }
       it "outputs JSON in a valid format" do
         allow(API::SpecialHoursXmlToJsonParser).to receive(:call).with(anything()).and_return(valid_special_hours_json)
-        allow(service).to receive(:special_events).and_return(valid_special_hours_json)
         expect(JSON.parse(service.call(xml, dates))[formatted_time]["open"]).to eq "12:00am"
         expect(JSON.parse(service.call(xml, dates))[formatted_time]["close"]).to eq " 2:59am"
         expect(JSON.parse(service.call(xml, dates))[formatted_time]["string_date"]).to eq "Fri, Jun  8, 2018"
