@@ -1,0 +1,524 @@
+{
+  "2019-05-01T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Wed, May 1, 2019",
+    "sortable_date": "2019-05-01",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-02T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Thu, May 2, 2019",
+    "sortable_date": "2019-05-02",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-03T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "10:00pm",
+    "string_date": "Fri, May 3, 2019",
+    "sortable_date": "2019-05-03",
+    "formatted_hours": "12:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2019-05-04T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "10:00pm",
+    "string_date": "Sat, May 4, 2019",
+    "sortable_date": "2019-05-04",
+    "formatted_hours": "10:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2019-05-05T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "11:59pm",
+    "string_date": "Sun, May 5, 2019",
+    "sortable_date": "2019-05-05",
+    "formatted_hours": "10:00am - No Closing",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-06T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Mon, May 6, 2019",
+    "sortable_date": "2019-05-06",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-07T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Tue, May 7, 2019",
+    "sortable_date": "2019-05-07",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-08T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Wed, May 8, 2019",
+    "sortable_date": "2019-05-08",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-09T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Thu, May 9, 2019",
+    "sortable_date": "2019-05-09",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-10T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "10:00pm",
+    "string_date": "Fri, May 10, 2019",
+    "sortable_date": "2019-05-10",
+    "formatted_hours": "12:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2019-05-11T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "10:00pm",
+    "string_date": "Sat, May 11, 2019",
+    "sortable_date": "2019-05-11",
+    "formatted_hours": "10:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2019-05-12T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "11:59pm",
+    "string_date": "Sun, May 12, 2019",
+    "sortable_date": "2019-05-12",
+    "formatted_hours": "10:00am - No Closing",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-13T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Mon, May 13, 2019",
+    "sortable_date": "2019-05-13",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-14T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Tue, May 14, 2019",
+    "sortable_date": "2019-05-14",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-15T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Wed, May 15, 2019",
+    "sortable_date": "2019-05-15",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-16T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Thu, May 16, 2019",
+    "sortable_date": "2019-05-16",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-17T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "10:00pm",
+    "string_date": "Fri, May 17, 2019",
+    "sortable_date": "2019-05-17",
+    "formatted_hours": "12:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2019-05-18T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "10:00pm",
+    "string_date": "Sat, May 18, 2019",
+    "sortable_date": "2019-05-18",
+    "formatted_hours": "10:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2019-05-19T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "11:59pm",
+    "string_date": "Sun, May 19, 2019",
+    "sortable_date": "2019-05-19",
+    "formatted_hours": "10:00am - No Closing",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-20T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Mon, May 20, 2019",
+    "sortable_date": "2019-05-20",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-21T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Tue, May 21, 2019",
+    "sortable_date": "2019-05-21",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-22T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Wed, May 22, 2019",
+    "sortable_date": "2019-05-22",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-23T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Thu, May 23, 2019",
+    "sortable_date": "2019-05-23",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-24T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "10:00pm",
+    "string_date": "Fri, May 24, 2019",
+    "sortable_date": "2019-05-24",
+    "formatted_hours": "12:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2019-05-25T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "10:00pm",
+    "string_date": "Sat, May 25, 2019",
+    "sortable_date": "2019-05-25",
+    "formatted_hours": "10:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2019-05-26T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "10:00pm",
+    "string_date": "Sun, May 26, 2019",
+    "sortable_date": "2019-05-26",
+    "formatted_hours": "10:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2019-05-27T00:00:00+00:00": {
+    "open": "",
+    "close": "",
+    "string_date": "Mon, May 27, 2019",
+    "sortable_date": "2019-05-27",
+    "formatted_hours": "Closed",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "CLOSE",
+    "all_open_hours": []
+  },
+  "2019-05-28T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "11:59pm",
+    "string_date": "Tue, May 28, 2019",
+    "sortable_date": "2019-05-28",
+    "formatted_hours": "7:30am - No Closing",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-29T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Wed, May 29, 2019",
+    "sortable_date": "2019-05-29",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-30T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "11:59pm",
+    "string_date": "Thu, May 30, 2019",
+    "sortable_date": "2019-05-30",
+    "formatted_hours": "Open 24 Hours",
+    "open_all_day": true,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2019-05-31T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "10:00pm",
+    "string_date": "Fri, May 31, 2019",
+    "sortable_date": "2019-05-31",
+    "formatted_hours": "12:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "22:00"
+      }
+    ]
+  }
+}
