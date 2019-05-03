@@ -19,7 +19,6 @@ module API
       @raw_hours.each do |day, hour|
         hours_data[day] = lib_open_hours(hour['day'])
       end
-      byebug
       hours_data.to_json
     end
 
