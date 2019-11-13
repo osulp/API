@@ -84,7 +84,7 @@ module API
 
       all_open_hours(day).map do |h|
         formatted_hours(h[:open], h[:close])
-      end.join(', ')
+      end.join('<br>')
     end
 
     def partially_open?(open_time, close_time)
@@ -97,7 +97,8 @@ module API
 
     def formatted_hours(open_time, close_time)
       if close_time == '00:14' || partially_open?(open_time, close_time)
-        "#{format_hour(open_time)} - No Closing"
+        # Example: 6:00am - 12:00 AM (No closing)
+        "#{format_hour(open_time)} - 12:00 AM"
       elsif open_time == '00:14'
         "Closes at #{format_hour(close_time)}"
       elsif open_time == '00:00' && close_time == '23:59'
