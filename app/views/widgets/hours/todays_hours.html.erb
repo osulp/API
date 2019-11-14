@@ -5,6 +5,6 @@
   <% hours.each do |key, value| %>
     <% day = Date.parse(key) %>
     <h2><%= day.today? ? 'Today' : day.strftime("%A") %>:
-      <%= "#{value["formatted_hours"]}" %></h2>
+      <%= raw "#{value["formatted_hours"].html_safe}" %></h2>
   <% end %>
 </div>

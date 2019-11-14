@@ -6,7 +6,7 @@
     <% hours.each do |key, value| %>
       <% day = Date.parse(key) %>
       <strong><%= day.today? ? 'Today' : day.strftime("%A") %>:</strong>
-      <%= "#{value["formatted_hours"]}" %><br>
+      <%= raw "#{value["formatted_hours"]}".html_safe %><br>
     <% end %>
   </p>
 </div>
