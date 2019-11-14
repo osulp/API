@@ -98,7 +98,7 @@ module API
     def formatted_hours(open_time, close_time)
       if close_time == '00:14' || partially_open?(open_time, close_time)
         # Example: 6:00am - 12:00 AM (No closing)
-        "#{format_hour(open_time)} - 12:00 AM"
+        "#{format_hour(open_time)} - 12:00am"
       elsif open_time == '00:14'
         "Closes at #{format_hour(close_time)}"
       elsif open_time == '00:00' && close_time == '23:59'
