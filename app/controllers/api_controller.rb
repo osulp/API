@@ -3,7 +3,15 @@ class ApiController < ApplicationController
 
   def hours
     dates = @dates.blank? ? [Time.zone.today.strftime('%Y-%m-%d'), Time.zone.today.strftime('%Y-%m-%d')] : @dates.sort
-    alma = Alma.new(dates.first, dates.last)
+    alma = Alma.new(date_from: dates.first, date_to: dates.last, limited: false)
+    @hours = alma.hours_json
+
+    render json: @hours
+  end
+
+  def hours_limited
+    dates = @dates.blank? ? [Time.zone.today.strftime('%Y-%m-%d'), Time.zone.today.strftime('%Y-%m-%d')] : @dates.sort
+    alma = Alma.new(date_from: dates.first, date_to: dates.last, limited: true)
     @hours = alma.hours_json
 
     render json: @hours

@@ -1,1 +1,6 @@
-<div id="widget_datepicker"></div>
+<% if limited.present? %>
+  <div id="widget_datepicker" class="limited_hours"></div>
+<% else %>
+  <div id="widget_datepicker" class=""></div>
+<% end %>
+

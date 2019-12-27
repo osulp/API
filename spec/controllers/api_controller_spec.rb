@@ -8,7 +8,7 @@ describe ApiController, type: :controller do
     let(:valid_json) { JSON.parse('{ "valid_json_with_data": {"data": "data"} }') }
     let(:valid_xml) { "<days><day><date>2018-06-03Z</date><from>00:00</from><to>23:59</to></day></days>" }
     let(:valid_xml_special) { File.read("spec/fixtures/alma_open_and_special_hours.xml") }
-    let(:alma) { Alma.new(date_from, date_to) }
+    let(:alma) { Alma.new(date_from: date_from, date_to: date_to, limited: false) }
     let(:raw_hours_json) { File.read('spec/fixtures/alma_may_2019_raw.json') }
     let(:hours_json) { File.read('spec/fixtures/alma_may_2019.json') }
     let(:raw_json) do

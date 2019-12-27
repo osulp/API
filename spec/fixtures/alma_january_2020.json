@@ -1,0 +1,582 @@
+{
+  "2020-01-01T00:00:00+00:00": {
+    "open": "",
+    "close": "",
+    "string_date": "Wed, Jan 1, 2020",
+    "sortable_date": "2020-01-01",
+    "formatted_hours": "Closed",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "CLOSE",
+    "all_open_hours": []
+  },
+  "2020-01-02T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "6:00pm",
+    "string_date": "Thu, Jan 2, 2020",
+    "sortable_date": "2020-01-02",
+    "formatted_hours": "7:30am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
+  },
+  "2020-01-03T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "6:00pm",
+    "string_date": "Fri, Jan 3, 2020",
+    "sortable_date": "2020-01-03",
+    "formatted_hours": "7:30am - 6:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "18:00"
+      }
+    ]
+  },
+  "2020-01-04T00:00:00+00:00": {
+    "open": "",
+    "close": "",
+    "string_date": "Sat, Jan 4, 2020",
+    "sortable_date": "2020-01-04",
+    "formatted_hours": "Closed",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "CLOSE",
+    "all_open_hours": []
+  },
+  "2020-01-05T00:00:00+00:00": {
+    "open": "1:00pm",
+    "close": "10:00pm",
+    "string_date": "Sun, Jan 5, 2020",
+    "sortable_date": "2020-01-05",
+    "formatted_hours": "1:00pm - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "13:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2020-01-06T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "11:59pm",
+    "string_date": "Mon, Jan 6, 2020",
+    "sortable_date": "2020-01-06",
+    "formatted_hours": "7:30am - No closing",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2020-01-07T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:00am",
+    "string_date": "Tue, Jan 7, 2020",
+    "sortable_date": "2020-01-07",
+    "formatted_hours": "Open 24 Hours<br>2:00am-6:00am Limited Library Services only in Java II",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:00"
+      },
+      {
+        "open": "06:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2020-01-08T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:00am",
+    "string_date": "Wed, Jan 8, 2020",
+    "sortable_date": "2020-01-08",
+    "formatted_hours": "Open 24 Hours<br>2:00am-6:00am Limited Library Services only in Java II",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:00"
+      },
+      {
+        "open": "06:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2020-01-09T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:00am",
+    "string_date": "Thu, Jan 9, 2020",
+    "sortable_date": "2020-01-09",
+    "formatted_hours": "Open 24 Hours<br>2:00am-6:00am Limited Library Services only in Java II",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:00"
+      },
+      {
+        "open": "06:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2020-01-10T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:00am",
+    "string_date": "Fri, Jan 10, 2020",
+    "sortable_date": "2020-01-10",
+    "formatted_hours": "12:00am - 10:00pm<br>2:00am-6:00am Limited Library Services only in Java II",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:00"
+      },
+      {
+        "open": "06:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2020-01-11T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "10:00pm",
+    "string_date": "Sat, Jan 11, 2020",
+    "sortable_date": "2020-01-11",
+    "formatted_hours": "10:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2020-01-12T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "11:59pm",
+    "string_date": "Sun, Jan 12, 2020",
+    "sortable_date": "2020-01-12",
+    "formatted_hours": "10:00am - No closing",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2020-01-13T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:00am",
+    "string_date": "Mon, Jan 13, 2020",
+    "sortable_date": "2020-01-13",
+    "formatted_hours": "Open 24 Hours<br>2:00am-6:00am Limited Library Services only in Java II",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:00"
+      },
+      {
+        "open": "06:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2020-01-14T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:00am",
+    "string_date": "Tue, Jan 14, 2020",
+    "sortable_date": "2020-01-14",
+    "formatted_hours": "Open 24 Hours<br>2:00am-6:00am Limited Library Services only in Java II",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:00"
+      },
+      {
+        "open": "06:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2020-01-15T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:00am",
+    "string_date": "Wed, Jan 15, 2020",
+    "sortable_date": "2020-01-15",
+    "formatted_hours": "Open 24 Hours<br>2:00am-6:00am Limited Library Services only in Java II",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:00"
+      },
+      {
+        "open": "06:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2020-01-16T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:00am",
+    "string_date": "Thu, Jan 16, 2020",
+    "sortable_date": "2020-01-16",
+    "formatted_hours": "Open 24 Hours<br>2:00am-6:00am Limited Library Services only in Java II",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:00"
+      },
+      {
+        "open": "06:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2020-01-17T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:00am",
+    "string_date": "Fri, Jan 17, 2020",
+    "sortable_date": "2020-01-17",
+    "formatted_hours": "12:00am - 10:00pm<br>2:00am-6:00am Limited Library Services only in Java II",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:00"
+      },
+      {
+        "open": "06:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2020-01-18T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "10:00pm",
+    "string_date": "Sat, Jan 18, 2020",
+    "sortable_date": "2020-01-18",
+    "formatted_hours": "10:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2020-01-19T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "10:00pm",
+    "string_date": "Sun, Jan 19, 2020",
+    "sortable_date": "2020-01-19",
+    "formatted_hours": "10:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2020-01-20T00:00:00+00:00": {
+    "open": "",
+    "close": "",
+    "string_date": "Mon, Jan 20, 2020",
+    "sortable_date": "2020-01-20",
+    "formatted_hours": "Closed",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "CLOSE",
+    "all_open_hours": []
+  },
+  "2020-01-21T00:00:00+00:00": {
+    "open": "7:30am",
+    "close": "11:59pm",
+    "string_date": "Tue, Jan 21, 2020",
+    "sortable_date": "2020-01-21",
+    "formatted_hours": "7:30am - No closing",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "07:30",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2020-01-22T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:00am",
+    "string_date": "Wed, Jan 22, 2020",
+    "sortable_date": "2020-01-22",
+    "formatted_hours": "Open 24 Hours<br>2:00am-6:00am Limited Library Services only in Java II",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:00"
+      },
+      {
+        "open": "06:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2020-01-23T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:00am",
+    "string_date": "Thu, Jan 23, 2020",
+    "sortable_date": "2020-01-23",
+    "formatted_hours": "Open 24 Hours<br>2:00am-6:00am Limited Library Services only in Java II",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:00"
+      },
+      {
+        "open": "06:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2020-01-24T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:00am",
+    "string_date": "Fri, Jan 24, 2020",
+    "sortable_date": "2020-01-24",
+    "formatted_hours": "12:00am - 10:00pm<br>2:00am-6:00am Limited Library Services only in Java II",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:00"
+      },
+      {
+        "open": "06:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2020-01-25T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "10:00pm",
+    "string_date": "Sat, Jan 25, 2020",
+    "sortable_date": "2020-01-25",
+    "formatted_hours": "10:00am - 10:00pm",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ]
+  },
+  "2020-01-26T00:00:00+00:00": {
+    "open": "10:00am",
+    "close": "11:59pm",
+    "string_date": "Sun, Jan 26, 2020",
+    "sortable_date": "2020-01-26",
+    "formatted_hours": "10:00am - No closing",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "10:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2020-01-27T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:00am",
+    "string_date": "Mon, Jan 27, 2020",
+    "sortable_date": "2020-01-27",
+    "formatted_hours": "Open 24 Hours<br>2:00am-6:00am Limited Library Services only in Java II",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:00"
+      },
+      {
+        "open": "06:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2020-01-28T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:00am",
+    "string_date": "Tue, Jan 28, 2020",
+    "sortable_date": "2020-01-28",
+    "formatted_hours": "Open 24 Hours<br>2:00am-6:00am Limited Library Services only in Java II",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:00"
+      },
+      {
+        "open": "06:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2020-01-29T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:00am",
+    "string_date": "Wed, Jan 29, 2020",
+    "sortable_date": "2020-01-29",
+    "formatted_hours": "Open 24 Hours<br>2:00am-6:00am Limited Library Services only in Java II",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:00"
+      },
+      {
+        "open": "06:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2020-01-30T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:00am",
+    "string_date": "Thu, Jan 30, 2020",
+    "sortable_date": "2020-01-30",
+    "formatted_hours": "Open 24 Hours<br>2:00am-6:00am Limited Library Services only in Java II",
+    "open_all_day": false,
+    "closes_at_night": false,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:00"
+      },
+      {
+        "open": "06:00",
+        "close": "23:59"
+      }
+    ]
+  },
+  "2020-01-31T00:00:00+00:00": {
+    "open": "12:00am",
+    "close": "2:00am",
+    "string_date": "Fri, Jan 31, 2020",
+    "sortable_date": "2020-01-31",
+    "formatted_hours": "12:00am - 10:00pm<br>2:00am-6:00am Limited Library Services only in Java II",
+    "open_all_day": false,
+    "closes_at_night": true,
+    "event_desc": "",
+    "event_status": "",
+    "all_open_hours": [
+      {
+        "open": "00:00",
+        "close": "02:00"
+      },
+      {
+        "open": "06:00",
+        "close": "22:00"
+      }
+    ]
+  }
+}

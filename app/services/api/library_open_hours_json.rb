@@ -10,8 +10,8 @@ module API
   # @param [Hash] raw_hours
   # @returns [String] hours in json format
   class LibraryOpenHoursJson
-    def self.call(raw_hours)
-      new(raw_hours).call
+    def self.call(raw_hours, limited = false)
+      new(raw_hours, limited).call
     end
 
     def call
@@ -24,8 +24,9 @@ module API
 
     private
 
-    def initialize(raw_hours)
+    def initialize(raw_hours, limited = false)
       @raw_hours = raw_hours
+      @limited = limited
     end
 
     def lib_open_hours(raw_json)
@@ -75,6 +76,14 @@ module API
       day['hour'].map { |h| { open: h['from'], close: h['to'] } }
     end
 
+    def all_close_hours(day)
+      close = []
+      day['hour'].each_with_index do |h, i|
+        close << { from: h['to'], to: day['hour'][i + 1]['from'] } if i < (day['hour'].count - 1)
+      end
+      close
+    end
+
     def event_status(day)
       all_open_hours(day).count.zero? ? 'CLOSE' : ''
     end
@@ -82,9 +91,25 @@ module API
     def all_formatted_hours(day)
       return 'Closed' if all_open_hours(day).count.zero?
 
+      return limited_formatted_hours(day) if limited_hours?(day)
+
       all_open_hours(day).map do |h|
         formatted_hours(h[:open], h[:close])
       end.join('<br>')
+    end
+
+    def limited_formatted_hours(day)
+      hour = day['hour']
+      if hour.first['from'] == '00:00' && hour.last['to'] == '23:59'
+        I18n.translate(:limited_hours_open_24_hours)
+      else
+        I18n.translate(:limited_hours_not_open_24_hours, from: format_hour(hour.first['from']), to: format_hour(hour.last['to']))
+      end
+    end
+
+    def limited_hours?(day)
+      # byebug if day['date'] == '2020-01-07Z'
+      all_close_hours(day).include?(from: '02:00', to: '06:00') && @limited == true
     end
 
     def partially_open?(open_time, close_time)
@@ -97,8 +122,7 @@ module API
 
     def formatted_hours(open_time, close_time)
       if close_time == '00:14' || partially_open?(open_time, close_time)
-        # Example: 6:00am - 12:00 AM (No closing)
-        "#{format_hour(open_time)} - 12:00am"
+        "#{format_hour(open_time)} - No closing"
       elsif open_time == '00:14'
         "Closes at #{format_hour(close_time)}"
       elsif open_time == '00:00' && close_time == '23:59'

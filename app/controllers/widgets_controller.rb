@@ -21,6 +21,26 @@ class WidgetsController < ApplicationController
     end
   end
 
+  def hours_limited
+    @layout = 'basic_widget'
+    @limited = true
+    if @template == 'calendar'
+      @hours = '{}'
+      @layout = 'calendar_widget'
+    elsif @template == 'special_hours'
+      @hours = alma_special_hours_request || '{}'
+    elsif @template == 'todays_hours'
+      @hours = alma_todays_hours_request_limited || '{}'
+    else
+      @hours = alma_request_limited || '{}'
+    end
+
+    respond_to do |format|
+      format.html { render html: html_content }
+      format.js   { render js: js_constructor }
+    end
+  end
+
   private
 
   def js_constructor
@@ -36,20 +56,45 @@ class WidgetsController < ApplicationController
     ActionController::Base.new.render_to_string("widgets/hours/#{params[:template]}",
                                                 layout: @layout,
                                                 :locals => {
-                                                    :hours => JSON.parse(@hours)
+                                                    :hours => JSON.parse(@hours),
+                                                    :limited => @limited
                                                 })
   end
 
   def alma_request
-    dates = [Time.zone.today.strftime("%Y-%m-%d"), (Time.zone.today+6.days).strftime("%Y-%m-%d")]
-    alma = Alma.new(dates.first, dates.last)
+    alma = Alma.new(date_from: weekly_dates.first,
+                    date_to: weekly_dates.last,
+                    limited: false)
     alma.hours_json
   end
 
-  def alma_todays_hours_request
-    dates = [Time.zone.today.strftime("%Y-%m-%d"), Time.zone.today.strftime("%Y-%m-%d")]
-    alma = Alma.new(dates.first, dates.last)
+  def alma_request_limited
+    alma = Alma.new(date_from: weekly_dates.first,
+                    date_to: weekly_dates.last,
+                    limited: true)
     alma.hours_json
+  end
+
+  def weekly_dates
+    [Time.zone.today.strftime('%Y-%m-%d'), (Time.zone.today+6.days).strftime('%Y-%m-%d')]
+  end
+
+  def alma_todays_hours_request
+    alma = Alma.new(date_from: todays_dates.first,
+                    date_to: todays_dates.last,
+                    limited: false)
+    alma.hours_json
+  end
+
+  def alma_todays_hours_request_limited
+    alma = Alma.new(date_from: todays_dates.first,
+                    date_to: todays_dates.last,
+                    limited: true)
+    alma.hours_json
+  end
+
+  def todays_dates
+    [Time.zone.today.strftime('%Y-%m-%d'), Time.zone.today.strftime('%Y-%m-%d')]
   end
 
   def alma_special_hours_request
