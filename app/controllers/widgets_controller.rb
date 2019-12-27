@@ -3,6 +3,26 @@ class WidgetsController < ApplicationController
   before_action :set_params
 
   def hours
+    @limited = false
+    hours_layout
+
+    respond_to do |format|
+      format.html { render html: html_content }
+      format.js   { render js: js_constructor }
+    end
+  end
+
+  def hours_limited
+    @limited = true
+    hours_layout
+
+    respond_to do |format|
+      format.html { render html: html_content }
+      format.js   { render js: js_constructor }
+    end
+  end
+
+  def hours_layout
     @layout = 'basic_widget'
     if @template == 'calendar'
       @hours = '{}'
@@ -13,31 +33,6 @@ class WidgetsController < ApplicationController
       @hours = alma_todays_hours_request || '{}'
     else
       @hours = alma_request || '{}'
-    end
-
-    respond_to do |format|
-      format.html { render html: html_content }
-      format.js   { render js: js_constructor }
-    end
-  end
-
-  def hours_limited
-    @layout = 'basic_widget'
-    @limited = true
-    if @template == 'calendar'
-      @hours = '{}'
-      @layout = 'calendar_widget'
-    elsif @template == 'special_hours'
-      @hours = alma_special_hours_request || '{}'
-    elsif @template == 'todays_hours'
-      @hours = alma_todays_hours_request_limited || '{}'
-    else
-      @hours = alma_request_limited || '{}'
-    end
-
-    respond_to do |format|
-      format.html { render html: html_content }
-      format.js   { render js: js_constructor }
     end
   end
 
@@ -64,37 +59,23 @@ class WidgetsController < ApplicationController
   def alma_request
     alma = Alma.new(date_from: weekly_dates.first,
                     date_to: weekly_dates.last,
-                    limited: false)
-    alma.hours_json
-  end
-
-  def alma_request_limited
-    alma = Alma.new(date_from: weekly_dates.first,
-                    date_to: weekly_dates.last,
-                    limited: true)
+                    limited: @limited)
     alma.hours_json
   end
 
   def weekly_dates
-    [Time.zone.today.strftime('%Y-%m-%d'), (Time.zone.today+6.days).strftime('%Y-%m-%d')]
+    [(Time.zone.today+11.days).strftime('%Y-%m-%d'), (Time.zone.today+17.days).strftime('%Y-%m-%d')]
   end
 
   def alma_todays_hours_request
     alma = Alma.new(date_from: todays_dates.first,
                     date_to: todays_dates.last,
-                    limited: false)
-    alma.hours_json
-  end
-
-  def alma_todays_hours_request_limited
-    alma = Alma.new(date_from: todays_dates.first,
-                    date_to: todays_dates.last,
-                    limited: true)
+                    limited: @limited)
     alma.hours_json
   end
 
   def todays_dates
-    [Time.zone.today.strftime('%Y-%m-%d'), Time.zone.today.strftime('%Y-%m-%d')]
+    [(Time.zone.today+12.days).strftime('%Y-%m-%d'), (Time.zone.today+12.days).strftime('%Y-%m-%d')]
   end
 
   def alma_special_hours_request
