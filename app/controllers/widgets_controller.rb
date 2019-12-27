@@ -64,7 +64,7 @@ class WidgetsController < ApplicationController
   end
 
   def weekly_dates
-    [(Time.zone.today+11.days).strftime('%Y-%m-%d'), (Time.zone.today+17.days).strftime('%Y-%m-%d')]
+    [Time.zone.today.strftime("%Y-%m-%d"), (Time.zone.today+6.days).strftime("%Y-%m-%d")]
   end
 
   def alma_todays_hours_request
@@ -75,7 +75,7 @@ class WidgetsController < ApplicationController
   end
 
   def todays_dates
-    [(Time.zone.today+12.days).strftime('%Y-%m-%d'), (Time.zone.today+12.days).strftime('%Y-%m-%d')]
+    [Time.zone.today.strftime("%Y-%m-%d"), Time.zone.today.strftime("%Y-%m-%d")]
   end
 
   def alma_special_hours_request
