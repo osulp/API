@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe Alma do
-  let(:alma) { described_class.new(date_from, date_to) }
+  let(:alma) { described_class.new(date_from: date_from, date_to: date_to, limited: false) }
   let(:base_url) { ENV['ALMA_OPEN_HOURS_URL'].to_s }
   let(:alma_key) { ENV['ALMA_API_KEY'].to_s }
   let(:url) { "#{base_url}?apikey=#{alma_key}&from=#{date_from}&to=#{date_to}" }

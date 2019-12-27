@@ -13,7 +13,12 @@
                 return true;
             }
             function showHours(dateText) {
-                var ajaxUrl = '<%= Rails.application.config.action_mailer.default_url_options[:protocol] %>://<%= Rails.application.config.action_mailer.default_url_options[:host] %>/hours'
+                if ($("#widget_datepicker").hasClass('limited_hours') == true) {
+                  var ajaxUrl = '<%= Rails.application.config.action_mailer.default_url_options[:protocol] %>://<%= Rails.application.config.action_mailer.default_url_options[:host] %>/hours/limited'
+                } else {
+                  var ajaxUrl = '<%= Rails.application.config.action_mailer.default_url_options[:protocol] %>://<%= Rails.application.config.action_mailer.default_url_options[:host] %>/hours'
+                }
+
                 $.ajax({
                     type: 'POST',
                     url: ajaxUrl,

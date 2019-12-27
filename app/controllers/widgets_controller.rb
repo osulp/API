@@ -3,6 +3,26 @@ class WidgetsController < ApplicationController
   before_action :set_params
 
   def hours
+    @limited = false
+    hours_layout
+
+    respond_to do |format|
+      format.html { render html: html_content }
+      format.js   { render js: js_constructor }
+    end
+  end
+
+  def hours_limited
+    @limited = true
+    hours_layout
+
+    respond_to do |format|
+      format.html { render html: html_content }
+      format.js   { render js: js_constructor }
+    end
+  end
+
+  def hours_layout
     @layout = 'basic_widget'
     if @template == 'calendar'
       @hours = '{}'
@@ -14,11 +34,6 @@ class WidgetsController < ApplicationController
     else
       @hours = alma_request || '{}'
     end
-
-    respond_to do |format|
-      format.html { render html: html_content }
-      format.js   { render js: js_constructor }
-    end
   end
 
   private
@@ -27,7 +42,8 @@ class WidgetsController < ApplicationController
     content = ActionController::Base.new.render_to_string("widgets/hours/#{params[:template]}",
                                                           layout: false,
                                                           :locals => {
-                                                              :hours => JSON.parse(@hours)
+                                                              :hours => JSON.parse(@hours),
+                                                              :limited => @limited
                                                           })
     "document.write(#{content.to_json})"
   end
@@ -36,20 +52,31 @@ class WidgetsController < ApplicationController
     ActionController::Base.new.render_to_string("widgets/hours/#{params[:template]}",
                                                 layout: @layout,
                                                 :locals => {
-                                                    :hours => JSON.parse(@hours)
+                                                    :hours => JSON.parse(@hours),
+                                                    :limited => @limited
                                                 })
   end
 
   def alma_request
-    dates = [Time.zone.today.strftime("%Y-%m-%d"), (Time.zone.today+6.days).strftime("%Y-%m-%d")]
-    alma = Alma.new(dates.first, dates.last)
+    alma = Alma.new(date_from: weekly_dates.first,
+                    date_to: weekly_dates.last,
+                    limited: @limited)
     alma.hours_json
   end
 
+  def weekly_dates
+    [Time.zone.today.strftime("%Y-%m-%d"), (Time.zone.today+6.days).strftime("%Y-%m-%d")]
+  end
+
   def alma_todays_hours_request
-    dates = [Time.zone.today.strftime("%Y-%m-%d"), Time.zone.today.strftime("%Y-%m-%d")]
-    alma = Alma.new(dates.first, dates.last)
+    alma = Alma.new(date_from: todays_dates.first,
+                    date_to: todays_dates.last,
+                    limited: @limited)
     alma.hours_json
+  end
+
+  def todays_dates
+    [Time.zone.today.strftime("%Y-%m-%d"), Time.zone.today.strftime("%Y-%m-%d")]
   end
 
   def alma_special_hours_request

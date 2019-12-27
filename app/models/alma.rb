@@ -8,14 +8,15 @@ class Alma
   attr_reader :date_from
   attr_reader :date_to
 
-  def initialize(date_from, date_to)
-    @date_from = date_from
-    @date_to = date_to
+  def initialize(args)
+    @date_from = args[:date_from]
+    @date_to = args[:date_to]
+    @limited = args[:limited]
     @raw_hours = fetch_dates
   end
 
   def hours_json
-    API::LibraryOpenHoursJson.call(@raw_hours) if @raw_hours.present?
+    API::LibraryOpenHoursJson.call(@raw_hours, @limited) if @raw_hours.present?
   end
 
   private
