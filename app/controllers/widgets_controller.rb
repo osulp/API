@@ -42,7 +42,8 @@ class WidgetsController < ApplicationController
     content = ActionController::Base.new.render_to_string("widgets/hours/#{params[:template]}",
                                                           layout: false,
                                                           :locals => {
-                                                              :hours => JSON.parse(@hours)
+                                                              :hours => JSON.parse(@hours),
+                                                              :limited => @limited
                                                           })
     "document.write(#{content.to_json})"
   end
