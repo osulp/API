@@ -32,5 +32,6 @@
 en:
   hello: "Hello world"
   no_hours_available: "No hours available."
-  limited_hours_open_24_hours: 'Open 24 Hours<br>2:00am-6:00am Limited library services & study space will be available in Java II only'
-  limited_hours_not_open_24_hours: "%{from} - %{to}<br>2:00am-6:00am Limited library services & study space will be available in Java II only"
+  limited_hours_open_24_hours: 'Open 24 Hours'
+  limited_hours_not_open_24_hours: '%{from} - %{to}'
+  limited_hours_info: '2:00am-6:00am Limited library services & study space will be available in Java II only'

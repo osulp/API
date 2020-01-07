@@ -101,10 +101,20 @@ module API
     def limited_formatted_hours(day)
       hour = day['hour']
       if hour.first['from'] == '00:00' && hour.last['to'] == '23:59'
-        I18n.translate(:limited_hours_open_24_hours)
+        limited_hours_open_24_hours
       else
-        I18n.translate(:limited_hours_not_open_24_hours, from: format_hour(hour.first['from']), to: format_hour(hour.last['to']))
+        limited_hours_not_open_24_hours(hour)
       end
+    end
+
+    def limited_hours_open_24_hours
+      "#{I18n.translate(:limited_hours_open_24_hours)}<br>#{I18n.translate(:limited_hours_info)}"
+    end
+
+    def limited_hours_not_open_24_hours(hour)
+      "#{I18n.translate(:limited_hours_not_open_24_hours,
+                        from: format_hour(hour.first['from']),
+                        to: format_hour(hour.last['to']))}<br>#{I18n.translate(:limited_hours_info)}"
     end
 
     def limited_hours?(day)
