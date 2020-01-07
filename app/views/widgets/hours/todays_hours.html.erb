@@ -4,7 +4,15 @@
   <% end %>
   <% hours.each do |key, value| %>
     <% day = Date.parse(key) %>
-    <h2><%= day.today? ? 'Today' : day.strftime("%A") %>:
-      <%= raw "#{value["formatted_hours"].html_safe}" %></h2>
+
+    <% if limited == true %>
+      <h2><%= day.today? ? 'Today' : day.strftime("%A") %>:
+        <%= raw "#{value["formatted_hours"].split('<br>').first.html_safe}" %>
+      </h2>
+      <p class="limited-hours-info"><%= raw "#{value["formatted_hours"].split('<br>').second.html_safe}" %></p>
+    <% else %>
+      <h2><%= day.today? ? 'Today' : day.strftime("%A") %>:
+        <%= raw "#{value["formatted_hours"].html_safe}" %></h2>
+    <% end %>
   <% end %>
 </div>
