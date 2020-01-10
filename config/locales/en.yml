@@ -34,4 +34,7 @@ en:
   no_hours_available: "No hours available."
   limited_hours_open_24_hours: 'Open 24 Hours'
   limited_hours_not_open_24_hours: '%{from} - %{to}'
-  limited_hours_info: '2:00am-6:00am Limited library services & study space will be available in Java II only'
+  # limited_hours_info_plain can be used in places where html is not expected
+  # like the kiosk displays
+  limited_hours_info_plain: '2:00am-6:00am Limited library services in Java II'
+  limited_hours_info_html: '2:00am-6:00am <a href="https://library.oregonstate.edu/24-5-project-qa">Limited library services</a> in Java II'
