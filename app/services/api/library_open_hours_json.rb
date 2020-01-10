@@ -42,7 +42,8 @@ module API
         close: to_hour.present? ? format_hour(to_hour) : '',
         string_date: alma_date.strftime('%a, %b %-d, %Y'),
         sortable_date: alma_date.strftime('%Y-%m-%d'),
-        formatted_hours: all_formatted_hours(alma_day),
+        formatted_hours: all_formatted_hours(alma_day, false),
+        formatted_hours_plain_text: all_formatted_hours(alma_day, true),
         open_all_day: open_all_day?(from_hour, to_hour),
         closes_at_night: closes_at_night?(last_to_hour),
         event_desc: '',
@@ -88,33 +89,43 @@ module API
       all_open_hours(day).count.zero? ? 'CLOSE' : ''
     end
 
-    def all_formatted_hours(day)
+    def all_formatted_hours(day, plain_text = false)
       return 'Closed' if all_open_hours(day).count.zero?
 
-      return limited_formatted_hours(day) if limited_hours?(day)
+      return limited_formatted_hours(day, plain_text) if limited_hours?(day)
 
       all_open_hours(day).map do |h|
         formatted_hours(h[:open], h[:close])
-      end.join('<br>')
+      end.join(hours_delimiter(plain_text))
     end
 
-    def limited_formatted_hours(day)
+    def hours_delimiter(plain_text = false)
+      plain_text == true ? ', ' : '<br>'
+    end
+
+    def limited_formatted_hours(day, plain_text)
       hour = day['hour']
       if hour.first['from'] == '00:00' && hour.last['to'] == '23:59'
-        limited_hours_open_24_hours
+        limited_hours_open_24_hours(plain_text)
       else
-        limited_hours_not_open_24_hours(hour)
+        limited_hours_not_open_24_hours(hour, plain_text)
       end
     end
 
-    def limited_hours_open_24_hours
-      "#{I18n.translate(:limited_hours_open_24_hours)}<br>#{I18n.translate(:limited_hours_info)}"
+    def limited_hours_open_24_hours(plain_text)
+      "#{I18n.translate(:limited_hours_open_24_hours)}#{limited_hours_info(plain_text)}"
     end
 
-    def limited_hours_not_open_24_hours(hour)
+    def limited_hours_not_open_24_hours(hour, plain_text)
       "#{I18n.translate(:limited_hours_not_open_24_hours,
                         from: format_hour(hour.first['from']),
-                        to: format_hour(hour.last['to']))}<br>#{I18n.translate(:limited_hours_info)}"
+                        to: format_hour(hour.last['to']))}#{limited_hours_info(plain_text)}"
+    end
+
+    def limited_hours_info(plain_text = false)
+      return "#{hours_delimiter(plain_text)}#{I18n.translate(:limited_hours_info_plain)}" if plain_text == true
+
+      "#{hours_delimiter(plain_text)}#{I18n.translate(:limited_hours_info_html)}"
     end
 
     def limited_hours?(day)
