@@ -9,7 +9,10 @@
       <h2><%= day.today? ? 'Today' : day.strftime("%A") %>:
         <%= raw "#{value["formatted_hours"].split('<br>').first.html_safe}" %>
       </h2>
-      <p class="limited-hours-info"><%= raw "#{value["formatted_hours"].split('<br>').second.html_safe}" %></p>
+      <% hours_info = value["formatted_hours"].split('<br>').second %>
+      <% if hours_info.present? %>
+        <p class="limited-hours-info"><%= raw "#{hours_info.try(:html_safe)}" %></p>
+      <% end %>
     <% else %>
       <h2><%= day.today? ? 'Today' : day.strftime("%A") %>:
         <%= raw "#{value["formatted_hours"].html_safe}" %></h2>
