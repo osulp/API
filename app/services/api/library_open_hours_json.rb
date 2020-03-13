@@ -165,7 +165,7 @@ module API
       end
     end
 
-    # check if a day is a weekend
+    # check if a day is closing at midnight (next day doesn't open at 00:00)
     def close_midnight?(next_day)
       next_day_open_time = next_day.try(:[], 'day').try(:first).try(:[], 'hour').try(:first).try(:[], 'from')
       next_day_open_time.present? ? next_day_open_time != '00:00' : false
