@@ -6,7 +6,9 @@ RSpec.describe Alma do
   let(:alma) { described_class.new(date_from: date_from, date_to: date_to, limited: false) }
   let(:base_url) { ENV['ALMA_OPEN_HOURS_URL'].to_s }
   let(:alma_key) { ENV['ALMA_API_KEY'].to_s }
+  let(:next_day) { DateTime.parse(date_to).next_day.strftime('%Y-%m-%d') }
   let(:url) { "#{base_url}?apikey=#{alma_key}&from=#{date_from}&to=#{date_to}" }
+  let(:url_next) { "#{base_url}?apikey=#{alma_key}&from=#{next_day}&to=#{next_day}" }
   let(:raw_json) do
     {
       'day': [
@@ -26,8 +28,8 @@ RSpec.describe Alma do
       ]
     }.to_json
   end
-  let(:date_from) { '2018-06-24' }
-  let(:date_to) { '2018-06-24' }
+  let(:date_from) { '2019-06-24' }
+  let(:date_to) { '2019-06-24' }
   let(:cached_minutes) { '1' }
 
   before do
@@ -43,6 +45,14 @@ RSpec.describe Alma do
           'User-Agent' => 'Ruby'
         }
       ).to_return(status: 200, body: raw_json, headers: {})
+    stub_request(:get, url_next)
+      .with(
+        headers: {
+          'Accept' => 'application/json',
+          'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'User-Agent' => 'Ruby'
+        }
+    ).to_return(status: 200, body: raw_json, headers: {})
   end
 
   it 'sets a hash variable' do
