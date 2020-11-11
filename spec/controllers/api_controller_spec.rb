@@ -32,10 +32,12 @@ describe ApiController, type: :controller do
     end
     let(:alma_with_special_hours) { AlmaSpecialHours.new }
     let(:url) { "#{ENV['ALMA_OPEN_HOURS_URL']}?apikey=#{ENV['ALMA_API_KEY']}&from=#{date_from}&to=#{date_to}" }
+    let(:url_next) { "#{ENV['ALMA_OPEN_HOURS_URL']}?apikey=#{ENV['ALMA_API_KEY']}&from=#{next_day}&to=#{next_day}" }
     let(:open_and_special_hours_url) { "#{ENV['ALMA_SPECIAL_HOURS_URL']}?apikey=#{ENV['ALMA_API_KEY']}&scope=#{ENV['ALMA_SPECIAL_HOURS_SCOPE']}" }
     let(:xml) { File.read("spec/fixtures/alma_open_hours.xml") }
     let(:date_from) { '2019-06-24' }
     let(:date_to) { '2019-06-24' }
+    let(:next_day) { DateTime.parse(date_to).next_day.strftime('%Y-%m-%d') }
     let(:dates) { [date_from, date_to] }
 
     before do
@@ -53,12 +55,23 @@ describe ApiController, type: :controller do
                 'User-Agent'=>'Ruby'
             }).
         to_return(status: 200, body: raw_json, headers: {})
+
+        stub_request(:get, url_next).
+          with(
+            headers: {
+              'Accept'=>'application/json',
+              'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+              'User-Agent'=>'Ruby'
+            }).
+            to_return(status: 200, body: raw_json, headers: {})
     end
 
     context "When no day is provided" do
       let(:day) { '' }
       let(:date_from) { day }
       let(:date_to) { day }
+      let(:next_day) { '' }
+
 
       before do
         allow(API::OpenAndSpecialHoursXmlToJsonParser).to receive(:call).with(anything(), []).and_return(valid_json)
