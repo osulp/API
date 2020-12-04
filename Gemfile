@@ -7,12 +7,7 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.0'
 
 gem "activejob", ">= 5.2.1.1"
-gem "activestorage", ">= 5.2.1.1"
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-# Mysql2 for staging and production
-gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.12'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
