@@ -1,11 +1,3 @@
-# Database
-API_ADAPTER: mysql2
-API_DB: development
-API_DB_HOST: localhost
-API_DB_PASSWORD: '12341234'
-API_DB_PORT: '3300'
-API_DB_USERNAME: root
-
 # Secret key for Devise and Rails security
 API_SECRET_KEY_BASE: bobross1234bobross1234bobross1234bobross1234bobross1234
 
