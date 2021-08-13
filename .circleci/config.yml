@@ -66,7 +66,7 @@ jobs:
           at: ~/
       - run:
           name: Update bundler
-          command: gem install bundler -v 2.1.4
+          command: gem install bundler -v 2.1.4 && bundle install --binstubs
       - run:
           name: Run Rubocop
           command: bundle exec rubocop
