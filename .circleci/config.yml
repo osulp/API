@@ -4,7 +4,7 @@ orbs:
 jobs:
   checkout_code:
     docker:
-      - image: circleci/ruby:2.5.1
+      - image: circleci/ruby:2.5
     working_directory: ~/app
     steps:
       - restore_cache:
