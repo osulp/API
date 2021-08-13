@@ -181,6 +181,4 @@ workflows:
           name: build_and_push_beavernetes
           requires:
             - test
-          filters:
-            branches:
           repo: osulp-api
