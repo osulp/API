@@ -55,21 +55,21 @@ jobs:
           paths:
             - app/*
             - app/**/*
-  lint:
-    docker:
-      - image: circleci/ruby:2.5-stretch-node-browsers
-    environment:
-      BUNDLE_PATH: vendor/bundle
-    working_directory: ~/app
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run:
-          name: Update bundler
-          command: gem install bundler -v 2.1.4 && bundle install --binstubs
-      - run:
-          name: Run Rubocop
-          command: bundle exec rubocop
+#  lint:
+#    docker:
+#      - image: circleci/ruby:2.5-stretch-node-browsers
+#    environment:
+#      BUNDLE_PATH: vendor/bundle
+#    working_directory: ~/app
+#    steps:
+#      - attach_workspace:
+#          at: ~/
+#      - run:
+#          name: Update bundler
+#          command: gem install bundler -v 2.1.4 && bundle install --binstubs
+#      - run:
+#          name: Run Rubocop
+#          command: bundle exec rubocop
   test:
     docker:
       - image: circleci/ruby:2.5-stretch-node-browsers
@@ -169,9 +169,9 @@ workflows:
       - bundle:
           requires:
             - checkout_code
-      - lint:
-          requires:
-            - bundle
+#      - lint:
+#          requires:
+#            - bundle
       - test:
           requires:
             - lint
