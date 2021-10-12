@@ -145,7 +145,7 @@ GEM
     parser (3.0.2.0)
       ast (~> 2.4.1)
     public_suffix (4.0.6)
-    puma (5.4.0)
+    puma (5.5.1)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
@@ -269,7 +269,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   loofah (>= 2.3.1)
   mysql2
-  puma (~> 5.3)
+  puma (~> 5.5)
   rails (~> 5.2.4.6)
   rails-controller-testing
   rspec
