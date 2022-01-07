@@ -9,8 +9,9 @@ class Alma
   attr_reader :date_to
 
   def initialize(args)
-    @date_from = args[:date_from]
-    @date_to = args[:date_to]
+    dates_input = add_extra_day(args[:date_from], args[:date_to])
+    @date_from = dates_input.first
+    @date_to = dates_input.last
     @limited = args[:limited]
     @raw_hours = fetch_dates
   end
@@ -20,6 +21,14 @@ class Alma
   end
 
   private
+
+  def add_extra_day(day_from, day_to)
+    # get next day date and add it to the end of the list (this is used in the
+    # parser to determine labels that change depending on future times
+    dates_new = [day_from, day_to].sort
+    dates_new << DateTime.parse(dates_new.last).next_day.strftime('%Y-%m-%d')
+    [dates_new.first, dates_new.last]
+  end
 
   ##
   # Fetch the Alma Open Hours in json format for the givend dates

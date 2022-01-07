@@ -17,9 +17,11 @@ module API
     def call
       hours_data = {}
       @raw_hours.each do |day, hour|
-        hours_data[day] = lib_open_hours(hour['day'])
+        next_day = @raw_hours[DateTime.parse(day).next_day.to_s]
+        hours_data[day] = lib_open_hours(hour['day'], next_day)
       end
-      hours_data.to_json
+      hours_data.without(hours_data.to_a.last.first).to_json
+      # hours_data.to_json
     end
 
     private
@@ -29,7 +31,7 @@ module API
       @limited = limited
     end
 
-    def lib_open_hours(raw_json)
+    def lib_open_hours(raw_json, next_day_json)
       return {} if raw_json.blank?
 
       alma_day = raw_json.first
@@ -42,8 +44,8 @@ module API
         close: to_hour.present? ? format_hour(to_hour) : '',
         string_date: alma_date.strftime('%a, %b %-d, %Y'),
         sortable_date: alma_date.strftime('%Y-%m-%d'),
-        formatted_hours: all_formatted_hours(alma_day, false),
-        formatted_hours_plain_text: all_formatted_hours(alma_day, true),
+        formatted_hours: all_formatted_hours(day: alma_day, next_day: next_day_json, plain_text: false),
+        formatted_hours_plain_text: all_formatted_hours(day: alma_day, next_day: next_day_json, plain_text: true),
         open_all_day: open_all_day?(from_hour, to_hour),
         closes_at_night: closes_at_night?(last_to_hour),
         event_desc: '',
@@ -89,13 +91,14 @@ module API
       all_open_hours(day).count.zero? ? 'CLOSE' : ''
     end
 
-    def all_formatted_hours(day, plain_text = false)
+    def all_formatted_hours(day:, next_day:, plain_text: false)
       return 'Closed' if all_open_hours(day).count.zero?
 
       return limited_formatted_hours(day, plain_text) if limited_hours?(day)
 
+      # byebug if day['date'] == '2020-03-13Z'
       all_open_hours(day).map do |h|
-        formatted_hours(h[:open], h[:close])
+        formatted_hours(open_time: h[:open], close_time: h[:close], day: day, next_day: next_day)
       end.join(hours_delimiter(plain_text))
     end
 
@@ -141,11 +144,18 @@ module API
       open_time == '00:00' && close_time == '23:59' ? true : false
     end
 
-    def formatted_hours(open_time, close_time)
-      if close_time == '00:14' || partially_open?(open_time, close_time)
+    def formatted_hours(open_time:, close_time:, day:, next_day:)
+      # byebug if day['date'] == '2020-03-13Z'
+      if close_time == '00:14'
+        "#{format_hour(open_time)} - No closing"
+      elsif partially_open?(open_time, close_time) && close_midnight?(next_day)
+        "#{format_hour(open_time)} - midnight"
+      elsif partially_open?(open_time, close_time)
         "#{format_hour(open_time)} - No closing"
       elsif open_time == '00:14'
         "Closes at #{format_hour(close_time)}"
+      elsif open_time == '00:00' && close_time == '23:59' && close_midnight?(next_day)
+        "#{format_hour(open_time)} - midnight"
       elsif open_time == '00:00' && close_time == '23:59'
         'Open 24 Hours'
       elsif open_time.eql? close_time
@@ -153,6 +163,12 @@ module API
       else
         "#{format_hour(open_time)} - #{format_hour(close_time)}"
       end
+    end
+
+    # check if a day is closing at midnight (next day doesn't open at 00:00)
+    def close_midnight?(next_day)
+      next_day_open_time = next_day.try(:[], 'day').try(:first).try(:[], 'hour').try(:first).try(:[], 'from')
+      next_day_open_time.present? ? next_day_open_time != '00:00' : false
     end
 
     def format_hour(time)
