@@ -143,7 +143,7 @@ module API
 
     def formatted_hours(open_time, close_time)
       if close_time == '00:14' || partially_open?(open_time, close_time)
-        "#{format_hour(open_time)} - No closing"
+        "#{format_hour(open_time)} - Midnight"
       elsif open_time == '00:14'
         "Closes at #{format_hour(close_time)}"
       elsif open_time == '00:00' && close_time == '23:59'
