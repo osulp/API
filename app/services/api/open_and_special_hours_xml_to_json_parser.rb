@@ -289,7 +289,7 @@ module API
 
     def formatted_hours(open_time, close_time)
       if (close_time == "00:14" || partially_open?(open_time, close_time) == true)
-        "#{Time.parse(open_time).strftime("%-l:%M%P")} - No Closing"
+        "#{Time.parse(open_time).strftime("%-l:%M%P")} - Midnight"
       elsif (open_time == "00:14")
         "Closes at #{close_time}"
       elsif (open_time == "00:00" && close_time == "23:59" && @closure_info.present?)

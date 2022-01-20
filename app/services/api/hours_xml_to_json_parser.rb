@@ -121,7 +121,7 @@ module API
 
     def self.formatted_hours(open_time, close_time)
       if (close_time == "00:14")
-        "#{Time.parse(open_time).strftime("%l:%M%P")} - No Closing"
+        "#{Time.parse(open_time).strftime("%l:%M%P")} - Midnight"
       elsif (open_time == "00:14")
         "Closes at #{close_time}"
       elsif (open_time == "00:00" && close_time == "23:59")
