@@ -6,11 +6,11 @@
     <% hours.each do |key, value| %>
       <% day = Date.parse(key) %>
       <% if day.today? %>
-        <h3> 'Today:' </h3>
+        <h4> Today: </h4>
       <% else %>
-          <strong><% day.strftime("%A") %>: </strong>
-      <%= raw "#{value["formatted_hours"]}".html_safe %><br>
+          <strong><%= day.strftime("%A") %>: </strong>
       <% end %>
+      <%= raw "#{value["formatted_hours"]}".html_safe %><br>
     <% end %>
   </p>
 </div>
