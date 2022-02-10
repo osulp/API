@@ -65,7 +65,7 @@ class WidgetsController < ApplicationController
   end
 
   def weekly_dates
-    [Time.zone.today.strftime("%Y-%m-%d"), (Time.zone.beginning_of_week(start_day = :saturday)+7.days).strftime("%Y-%m-%d")]
+    [Time.zone.today.beginning_of_week(:sunday).strftime("%Y-%m-%d")..Time.zone.today.end_of_week(:saturday).strftime("%Y-%m-%d")]
   end
 
   def alma_todays_hours_request
