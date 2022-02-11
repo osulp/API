@@ -3,6 +3,9 @@
     <% if hours.blank? %>
       <strong><%= I18n.t 'no_hours_available' %></strong>
     <% end %>
+    <% todayHours = hours.fetch(Date.parse(Date.today.to_s)) %>
+    <h5> Today: <%= raw "#{todayHours["formatted_hours"]}".html_safe %> </h4>
+    <br>
     <% hours.each do |key, value| %>
       <% day = Date.parse(key) %>
       <% if day.today? %>
