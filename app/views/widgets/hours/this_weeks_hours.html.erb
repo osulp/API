@@ -3,9 +3,9 @@
     <% if hours.blank? %>
       <strong><%= I18n.t 'no_hours_available' %></strong>
     <% end %>
-    <% todayHours = hours.fetch(Date.today) %>
+    <%# todayHours = hours.fetch(Date.today) %>
     <h5> Today: </h4>
-    <span> <%= raw "#{todayHours["formatted_hours"]}".html_safe %> </span> <br>
+    <span> <%=# raw "#{todayHours["formatted_hours"]}".html_safe %> </span> <br>
     <% hours.each do |key, value| %>
       <% day = Date.parse(key) %>
       <% if day.today? %>
@@ -14,6 +14,7 @@
           <strong><%= day.strftime("%A") %>: </strong>
       <% end %>
       <%= raw "#{value["formatted_hours"]}".html_safe %><br>
+      <%= raw "#{key}".html_safe %><br>
     <% end %>
   </p>
 </div>
