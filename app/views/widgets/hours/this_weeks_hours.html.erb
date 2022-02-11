@@ -3,8 +3,6 @@
     <% if hours.blank? %>
       <strong><%= I18n.t 'no_hours_available' %></strong>
     <% end %>
-    <%= raw "#{hours}".html_safe %><br>
-    <br>
     <% hours.each do |key, value| %>
       <% day = Date.parse(key) %>
       <% if day.today? %>
