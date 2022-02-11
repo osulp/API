@@ -3,7 +3,7 @@
     <% if hours.blank? %>
       <strong><%= I18n.t 'no_hours_available' %></strong>
     <% end %>
-    <% todayHours = Date.parse(Date.today.to_s) %>
+    <% todayHours = Date.today.to_s %>
     <%= raw "#{todayHours}".html_safe %><br>
     <br>
     <% hours.each do |key, value| %>
