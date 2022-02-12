@@ -3,18 +3,16 @@
     <% if hours.blank? %>
       <strong><%= I18n.t 'no_hours_available' %></strong>
     <% end %>
-    <% todayDate = DateTime.parse(Date.today.to_s).strftime("%FT%T%:z") %>
-    <% todayHours = hours.fetch(todayDate) %>
-    <h5> Today: <%= raw "#{todayHours["formatted_hours"]}".html_safe %> </h5>
     <% hours.each do |key, value| %>
       <% day = Date.parse(key) %>
       <% if day.today? %>
-        <h4> Today: </h4>
-      <% else %>
-          <strong><%= day.strftime("%A") %>: </strong>
-      <% end %>
+        <h5> Today: <%= raw "#{value["formatted_hours"]}".html_safe %> </h5>
+      <% end %><br>
+    <% end %>
+    <% hours.each do |key, value| %>
+      <% day = Date.parse(key) %>
+      <strong><%= day.strftime("%A") %>: </strong>
       <%= raw "#{value["formatted_hours"]}".html_safe %><br>
-      <%= raw "#{key}".html_safe %><br>
     <% end %>
   </p>
 </div>
