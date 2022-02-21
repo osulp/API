@@ -10,8 +10,7 @@
     <% hours.each do |key, value| %>
       <% day = Date.parse(key) %>
       <strong><%= day.strftime("%A") %>: </strong>
-      <%= raw "#{value["formatted_hours"]}".html_safe %><br>
-      <%= raw "#{key}".html_safe %><br>
+      <br>
     <% end %>
   </p>
 </div>
