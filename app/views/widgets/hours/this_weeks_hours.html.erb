@@ -5,7 +5,7 @@
     <% elsif hours.length() <= 7 %>
       <% todayDate = DateTime.parse(Date.today.to_s).strftime("%FT%T%:z") %>
       <% todayHours = hours.fetch(todayDate) %>
-      <span style="font-size:1.2rem;"> Today: <%= raw "#{todayHours["formatted_hours"]}".html_safe %> </span>
+      <span style="font-size:1.2rem;font-weight:bold;"> <strong>Today: <%= raw "#{todayHours["formatted_hours"]}".html_safe %> </strong> </span><br>
     <% end %>
     <% hours.each do |key, value| %>
       <% day = Date.parse(key) %>
