@@ -7,7 +7,7 @@
       <% todayHours = hours.fetch(todayDate) %>
       <span style="font-size:1.3rem;font-weight:bold;"> <strong>Today: <%= raw "#{todayHours["formatted_hours"]}".html_safe %> </strong> </span><br>
     <% end %>
-    <div style="margin-top: 32px;"> 
+    <div style="margin-top: 18px;"> 
       <% hours.each do |key, value| %>
       <% day = Date.parse(key) %>
       <strong><%= day.strftime("%A") %>: </strong>
