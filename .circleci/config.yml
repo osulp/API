@@ -182,5 +182,5 @@ workflows:
             - test
           filters:
             branches:
-              only: master
+              only: main
           repo: osulp-api
