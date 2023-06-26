@@ -3,14 +3,14 @@ class ApiController < ApplicationController
 
   def hours
     alma = Alma.new(date_from: dates_today.first, date_to: dates_today.last, limited: false)
-    @hours = alma.hours_json
+    @hours = alma.hours_json.nil? ? "" : alma.hours_json
 
     render json: @hours
   end
 
   def hours_limited
     alma = Alma.new(date_from: dates_today.first, date_to: dates_today.last, limited: true)
-    @hours = alma.hours_json
+    @hours = alma.hours_json.nil? ? "" : alma.hours_json
 
     render json: @hours
   end
@@ -22,6 +22,7 @@ class ApiController < ApplicationController
   def special_hours
     alma_special_hours = AlmaSpecialHours.new
     @special_hours = API::SpecialHoursXmlToJsonParser.call(alma_special_hours.xml_document)
+		@special_hours = "" if @special_hours.nil?
 
     render json: @special_hours
   end
