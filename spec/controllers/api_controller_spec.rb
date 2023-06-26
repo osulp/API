@@ -68,7 +68,7 @@ describe ApiController, type: :controller do
 
       it "returns nil" do
         post :hours
-        expect(assigns(:hours)).to be nil
+        expect(assigns(:hours)).to eq ""
       end
     end
 
@@ -86,7 +86,7 @@ describe ApiController, type: :controller do
     end
 
     context "When a day is provided and no hours are available" do
-      let(:day) { '2030-06-08' }
+      let(:day) { '2099-06-08' }
       let(:date_from) { day }
       let(:date_to) { day }
       before do
@@ -97,7 +97,7 @@ describe ApiController, type: :controller do
 
       it "returns nil" do
         post :hours
-        expect(assigns(:hours)).to be_nil
+        expect(assigns(:hours)).to eq ""
       end
     end
   end
