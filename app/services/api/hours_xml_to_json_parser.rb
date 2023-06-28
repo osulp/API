@@ -77,12 +77,12 @@ module API
 
     def self.get_formatted_open_time(day)
       open_time = parse_open_time(day)
-      open_time.present? ? Time.parse(open_time).strftime("%l:%M%P") : ""
+      open_time.present? ? Time.parse(open_time).strftime("%l:%M %p") : ""
     end
 
     def self.get_formatted_close_time(day)
       close_time = parse_close_time(day)
-      close_time.present? ? Time.parse(close_time).strftime("%l:%M%P") : ""
+      close_time.present? ? Time.parse(close_time).strftime("%l:%M %p") : ""
     end
 
     def self.get_formatted_date(day)
@@ -121,7 +121,7 @@ module API
 
     def self.formatted_hours(open_time, close_time)
       if (close_time == "00:14")
-        "#{Time.parse(open_time).strftime("%l:%M%P")} - Midnight"
+        "#{Time.parse(open_time).strftime("%l:%M %p")} - Midnight"
       elsif (open_time == "00:14")
         "Closes at #{close_time}"
       elsif (open_time == "00:00" && close_time == "23:59")
@@ -129,7 +129,7 @@ module API
       elsif (open_time.eql? close_time)
         "Closed"
       else
-        "#{Time.parse(open_time).strftime("%l:%M%P")} -#{Time.parse(close_time).strftime("%l:%M%P")}"
+        "#{Time.parse(open_time).strftime("%l:%M %p")} -#{Time.parse(close_time).strftime("%l:%M %p")}"
       end
     end
 
