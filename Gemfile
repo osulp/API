@@ -42,6 +42,11 @@ gem "loofah", ">= 2.3.1"
 gem 'honeycomb-beeline', '>= 2.4.0'
 gem 'libhoney', '>= 1.18.0'
 
+# Honeycomb
+gem 'sequel'
+gem 'honeycomb-beeline'
+gem 'rack-honeycomb', '~> 0.5.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
